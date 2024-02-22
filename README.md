@@ -1,5 +1,6 @@
 # Manjaro configuration
-- ####  Replace domestic sources
+
+- #### Replace domestic sources
   pacman is manjaro's library management software, the foreign source is too slow and unstable, switch to the domestic source.
   ```shell
   sudo pacman-mirrors -i -c China -m rank
@@ -18,17 +19,20 @@
   Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
   ```
 - #### Update By AUR
+
   ```shell
   sudo pacman -Syyu
   ```
 
 - #### Install "archlinuxcn-keyring" Package Import GPG key
+
   ```shell
-  sudo pacman-key --lsign-key "farseerfc@archlinux.org" 
+  sudo pacman-key --lsign-key "farseerfc@archlinux.org"
   sudo pacman -S archlinuxcn-keyring
   ```
 
 - #### Install yay
+
   ```shell
   sudo pacman -Sy archlinuxcn-keyring haveged
   sudo systemctl enable haveged
@@ -41,14 +45,18 @@
   ```
 
 - #### Install the input method
+
   delete Fcitx4
+
   ```shell
   sudo pacman -Rs $(pacman -Qsq fcitx)
   ```
+
   Install fcitx5
+
   ```shell
-  sudo pacman -S fcitx5 
-  sudo pacman -S fcitx5-configtool  
+  sudo pacman -S fcitx5
+  sudo pacman -S fcitx5-configtool
   sudo pacman -S fcitx5-qt
   sudo pacman -S fcitx5-gtk
   sudo pacman -S fcitx5-chinese-addons
@@ -58,11 +66,14 @@
   ```
 
 - #### Configure 'environment'
+
   ```shell
   sudo chmod 777 /etc/environment
   vi  /etc/environment
   ```
+
   Add these in
+
   ```text
   GTK_IM_MODULE DEFAULT=fcitx
   QT_IM_MODULE  DEFAULT=fcitx
@@ -70,32 +81,39 @@
   INPUT_METHOD  DEFAULT=fcitx
   SDL_IM_MODULE DEFAULT=fcitx
   ```
+
   Note: In the KDE desktop environment, Fcitx5 will be launched automatically  
   Note: We need reboot to generate classicui.conf
 
 - #### Optimize the configuration
+
   TRM  
   If your manjaro root is installed on an SSD, then it is recommended that you enter the following command, TRM will help clean up the blocks in the SSD, thus extending the life of the SSD:
+
   ```shell
   sudo systemctl enable fstrim.timer
   ```
 
 - #### Configure SWAP
-  After the system is turned on, the memory occupies about 1.7G, and usually the computer with 
+
+  After the system is turned on, the memory occupies about 1.7G, and usually the computer with
   8-16G memory can reduce the swap usage, which can improve the performance of the computer.  
-  Looking at the swap usage, it is generally 60, which means that there is a 60% probability 
+  Looking at the swap usage, it is generally 60, which means that there is a 60% probability
   that the memory will be sorted into swap: `cat /proc/sys/vm/swappiness`  
   Change the swap usage policy to 10%, that is, there is a 10% probability that the memory
-  will be sorted to swap: `sudo sysctl -w vm.swappiness=10`    
+  will be sorted to swap: `sudo sysctl -w vm.swappiness=10`  
   Modify the configuration file `sudo xed /etc/sysctl.d/99-swappiness.conf`  
   Add the following line at the end of the file:
+
   ```shell
   vm.swappiness=10
   ```
+
   After restarting, you can check the value of swappiness, which is 10: `cat /proc/sys/vm/swappiness`  
   For more information about swap resizing, please refer to "ArchWiki About Swap".
 
 - #### Install ohmyzsh
+
   ```shell
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -104,6 +122,7 @@
   ```
 
 - #### Install p10k
+
   ```shell
   git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
   ```
@@ -113,6 +132,7 @@
   sudo pacman -S tmux
   ```
 - #### Install .tmux(oh my tmux)
+
   ```shell
   cd
   git clone https://github.com/gpakosz/.tmux.git
@@ -121,38 +141,46 @@
   ```
 
 - #### Install neofetch
+
   ```shell
   sudo  pacman -S neofetch
   ```
 
 - #### Install tree
+
   ```shell
   sudo pacman -S tree
   ```
 
 - #### Install neovim
+
   ```shell
   sudo pacman -S neovim
   ```
 
 - #### Install screenkey
+
   ```shell
   sudo pacman -S screenkey
   ```
 
 - #### Install alacritty
+
   ```shell
   sudo pacman -S alacritty
   ```
+
   Manually install references[alacritty-github](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)  
   Configuration references:[alacritty-config](https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd)
 
 - #### Install fonts
+
   ```shell
   sudo pacman -S nerd-fonts-jetbrains-mono
   ```
 
 - #### Configure zsh/tmux/alacritty/p10k themes
+
   ```shell
   mkdir -p ~/WorkingDocument/
   git clone https://github.com/NichloasChiu/MyZshTmuxConfigFile.git ~/WorkingDocument/
@@ -166,29 +194,33 @@
   sudo pacman -S yay base-devel
   yay -S microsoft-edge-dev-bin
   ```
-  
 - #### Install WPS：
+
   ```shell
   yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn
   yay -S wps-office-fonts ttf-ms-fonts
   ```
 
 - #### Install wemeet(腾讯会议)
+
   ```shell
   yay -S wemeet
   ```
 
 - #### Install tree-sitter-cli
+
   ```shell
   sudo pacman -S tree-sitter-cli
   ```
 
 - #### Install ripgrep
+
   ```shell
   sudo pacman -S ripgrep
   ```
 
 - #### Install go DiskUsage
+
   ```shell
   curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
   chmod +x gdu_linux_amd64
@@ -196,18 +228,21 @@
   ```
 
 - #### Install bottom
+
   ```shell
   sudo pacman -S bottom
   ```
 
 - #### Install lazygit
+
   ```shell
   sudo pacman -S lazygit
   ```
 
 - #### Install python
+
   ```shell
-  sudo pacman -Sy python 
+  sudo pacman -Sy python
   ```
 
 - #### Install nodejs
@@ -217,6 +252,7 @@
   yay nodejs-lts
   ```
 - #### Install npm
+
   ```shell
   yay -S npm
   # 查看node版本与npm版本
@@ -234,5 +270,29 @@
   git clone https://github.com/NichloasChiu/AstroNvim-config.git ~/.config/nvim/lua/user
   nvim
   ```
+
 ---
+
 # Optimized Manjaro
+
+```shell
+mkdir -p ~/WorkingDocument/
+git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/
+cd ~/WorkingDocument/Manjaro/
+tar -xf Mojave-Light-themes.tar.xz
+tar -xf WhiteSurIcon.tar.xz
+tar-xf WhiteSur-Light-themes.tar.xz
+tar -xf 01-McMojave-circle-icons.tar.xz
+mkdir -p  ~/.icons/
+mv McMojave-circle-dark/ ~/.icons
+mv McMojave-circle/ ~/.icons
+mv McMojave-circle-light/ ~/.icons
+mv WhiteSur/ ~/.icons
+mv WhiteSur-dark/ ~/.icons
+mkdir -p  ~/.themes
+mv Mojave-Light/ ~/.themes
+mv WhiteSur-Light/ ~/.themes
+```
+
+**win+a** search for `tweaks`, click **Appearance** to select configuration.  
+Or go to `google.com` search for **gnome-look** and download it yourself
