@@ -201,6 +201,8 @@
   yay -S wps-office-fonts ttf-ms-fonts
   ```
 
+  Use the installed application that comes with the system to download `freetype2-wps` to solve the problem of bold garbled characters
+
 - #### Install wemeet(腾讯会议)
 
   ```shell
