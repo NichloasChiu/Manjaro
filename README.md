@@ -273,6 +273,19 @@
   nvim
   ```
 
+- #### Install ulauncher-git
+  ```shell
+  yay -S ulauncher-git
+  # Install translate-shell-git 
+  yay -S translate-shell-git 
+  cd $HOME/.local/share/ulauncher/extensions 
+  git clone https://github.com/NastuzziSamy/ulauncher-translate.git
+  cp ~/WorkingDocument/MyZshTmuxConfigFile/init.trans ~/.translate-shell/init.trans
+  sudo pacman -S fzf
+  sudo pacman -S fd
+  git clone https://github.com/hillaryychan/ulauncher-fzf.git
+  ```
+
 ---
 
 # Optimized Manjaro
@@ -298,3 +311,4 @@ mv WhiteSur-Light/ ~/.themes
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
 Or go to `google.com` search for **gnome-look** and download it yourself
+
