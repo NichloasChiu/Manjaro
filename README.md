@@ -286,6 +286,11 @@
   git clone https://github.com/hillaryychan/ulauncher-fzf.git
   ```
 
+- #### Install boxes
+  ```shell
+  sudo pacman -S gnome-boxes
+  ```
+
 ---
 
 # Optimized Manjaro
