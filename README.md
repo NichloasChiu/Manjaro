@@ -327,7 +327,7 @@ sudo pacman -S tree-sitter-cli
 ### Uninstall the software
 
 ```shell
-sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps
+sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel 
 ```
 
 ### Beautify Manjaro
