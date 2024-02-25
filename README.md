@@ -112,6 +112,15 @@
   After restarting, you can check the value of swappiness, which is 10: `cat /proc/sys/vm/swappiness`  
   For more information about swap resizing, please refer to "ArchWiki About Swap".
 
+- #### Install PigchaProxy
+  Open [the official website](https://pigpigchacha.github.io/officialsite ) to download the Linux version deb installation file
+  ```shell
+  unzip ~/下载/PigchaClient_deb.zip -d ~/下载/
+  # Install dpkg
+  sudo pacman -S dpkg
+  sudo dpkg -i ~/下载/PigchaClient.deb
+  ```
+
 - #### Install ohmyzsh
 
   ```shell
@@ -158,58 +167,7 @@
   sudo pacman -S neovim
   ```
 
-- #### Install screenkey
-
-  ```shell
-  sudo pacman -S screenkey
-  ```
-
-- #### Install alacritty
-
-  ```shell
-  sudo pacman -S alacritty
-  ```
-
-  Manually install references[alacritty-github](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)  
-  Configuration references:[alacritty-config](https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd)
-
-- #### Install fonts
-
-  ```shell
-  sudo pacman -S nerd-fonts-jetbrains-mono
-  ```
-
-- #### Configure zsh/tmux/alacritty/p10k themes
-
-  ```shell
-  mkdir -p ~/WorkingDocument/
-  git clone https://github.com/NichloasChiu/MyZshTmuxConfigFile.git ~/WorkingDocument/
-  cd ~/WorkingDocument/MyZshTmuxConfigFile/
-  chmod 775 OverrideConf.sh
-  ./OverrideConf.sh
-  ```
-
-- #### Install Edge
-  ```shell
-  sudo pacman -S yay base-devel
-  yay -S microsoft-edge-dev-bin
-  ```
-- #### Install WPS：
-
-  ```shell
-  yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn
-  yay -S wps-office-fonts ttf-ms-fonts
-  ```
-
-  Use the installed application that comes with the system to download `freetype2-wps` to solve the problem of bold garbled characters
-
-- #### Install wemeet(腾讯会议)
-
-  ```shell
-  yay -S wemeet
-  ```
-
-- #### Install tree-sitter-cli
+  - #### Install tree-sitter-cli
 
   ```shell
   sudo pacman -S tree-sitter-cli
@@ -226,7 +184,7 @@
   ```shell
   curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
   chmod +x gdu_linux_amd64
-  mv gdu_linux_amd64 /usr/bin/gdu
+  sudo mv gdu_linux_amd64 /usr/bin/gdu
   ```
 
 - #### Install bottom
@@ -273,11 +231,65 @@
   nvim
   ```
 
+<!--- #### Install screenkey
+
+  ```shell
+  sudo pacman -S screenkey
+  ```
+ -->
+- #### Install alacritty
+
+  ```shell
+  sudo pacman -S alacritty
+  sudo pacman -S nerd-fonts-jetbrains-mono
+  git clone https://github.com/NichloasChiu/MyAlacrittyConfiguration.git ~/.config/alacritty
+  ```
+
+  Manually install references[alacritty-github](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)  
+  Configuration references:[alacritty-config](https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd)
+
+- #### Install fonts
+
+  ```shell
+  sudo pacman -S nerd-fonts-jetbrains-mono
+  ```
+
+- #### Configure zsh/tmux/alacritty/p10k themes
+
+  ```shell
+  mkdir -p ~/WorkingDocument/
+  git clone https://github.com/NichloasChiu/MyZshTmuxConfigFile.git ~/WorkingDocument/MyZshTmuxConfigFile
+  cd ~/WorkingDocument/MyZshTmuxConfigFile/
+  chmod 775 OverrideConf.sh
+  ./OverrideConf.sh
+  ```
+
+- #### Install Edge
+  ```shell
+  sudo pacman -S yay base-devel
+  yay -S microsoft-edge-dev-bin
+  ```
+- #### Install WPS：
+
+  ```shell
+  yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn
+  yay -S wps-office-fonts ttf-ms-fonts
+  ```
+
+  Use the installed application that comes with the system to download `freetype2-wps` to solve the problem of bold garbled characters
+
+- #### Install wemeet(腾讯会议)
+
+  ```shell
+  yay -S wemeet
+  ```
+
 - #### Install ulauncher-git
   ```shell
   yay -S ulauncher-git
   # Install translate-shell-git 
-  yay -S translate-shell-git 
+  yay -S translate-shell-git
+  # Open your ulauncher once
   cd $HOME/.local/share/ulauncher/extensions 
   git clone https://github.com/NastuzziSamy/ulauncher-translate.git
   cp ~/WorkingDocument/MyZshTmuxConfigFile/init.trans ~/.translate-shell/init.trans
@@ -296,12 +308,11 @@
 # Optimized Manjaro
 
 ```shell
-mkdir -p ~/WorkingDocument/
-git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/
+git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
 cd ~/WorkingDocument/Manjaro/
 tar -xf Mojave-Light-themes.tar.xz
 tar -xf WhiteSurIcon.tar.xz
-tar-xf WhiteSur-Light-themes.tar.xz
+tar -xf WhiteSur-Light-themes.tar.xz
 tar -xf 01-McMojave-circle-icons.tar.xz
 mkdir -p  ~/.icons/
 mv McMojave-circle-dark/ ~/.icons
