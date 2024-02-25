@@ -313,6 +313,8 @@ sudo pacman -S tree-sitter-cli
   ```shell
   yay -S lx-music-desktop-git
   # download https://soso.lanzouj.com/b00p9c94f#8mno
+  unzip ~/下载/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
+  # configuration lx-music-desktop
   ```
 
   <!-- - #### Install boxes -->
