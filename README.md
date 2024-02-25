@@ -113,7 +113,9 @@
   For more information about swap resizing, please refer to "ArchWiki About Swap".
 
 - #### Install PigchaProxy
-  Open [the official website](https://pigpigchacha.github.io/officialsite ) to download the Linux version deb installation file
+
+  Open [the official website](https://pigpigchacha.github.io/officialsite) to download the Linux version deb installation file
+
   ```shell
   unzip ~/下载/PigchaClient_deb.zip -d ~/下载/
   # Install dpkg
@@ -167,11 +169,11 @@
   sudo pacman -S neovim
   ```
 
-  - #### Install tree-sitter-cli
+- #### Install tree-sitter-cli
 
-  ```shell
-  sudo pacman -S tree-sitter-cli
-  ```
+```shell
+sudo pacman -S tree-sitter-cli
+```
 
 - #### Install ripgrep
 
@@ -221,6 +223,7 @@
   ```
 
 - #### Install Astro
+
   ```shell
   rm -rf ~/.config/nvim
   rm -rf ~/.local/share/nvim
@@ -231,12 +234,12 @@
   nvim
   ```
 
-<!--- #### Install screenkey
+<!-- - #### Install screenkey -->
+<!---->
+<!--   ```shell -->
+<!--   sudo pacman -S screenkey -->
+<!--   ``` -->
 
-  ```shell
-  sudo pacman -S screenkey
-  ```
- -->
 - #### Install alacritty
 
   ```shell
@@ -266,8 +269,8 @@
 
 - #### Install Edge
   ```shell
-  sudo pacman -S yay base-devel
-  yay -S microsoft-edge-dev-bin
+  sudo pacman -S base-devel
+  yay -S microsoft-edge-stable-bin
   ```
 - #### Install WPS：
 
@@ -285,28 +288,50 @@
   ```
 
 - #### Install ulauncher-git
+
   ```shell
   yay -S ulauncher-git
-  # Install translate-shell-git 
+  # Install translate-shell-git
   yay -S translate-shell-git
   # Open your ulauncher once
-  cd $HOME/.local/share/ulauncher/extensions 
+  cd $HOME/.local/share/ulauncher/extensions
   git clone https://github.com/NastuzziSamy/ulauncher-translate.git
-  cp ~/WorkingDocument/MyZshTmuxConfigFile/init.trans ~/.translate-shell/init.trans
+  cp ~/WorkingDocument/MyZshTmuxConfigFile/init.trans ~/.translate-shell
   sudo pacman -S fzf
   sudo pacman -S fd
   git clone https://github.com/hillaryychan/ulauncher-fzf.git
   ```
 
-- #### Install boxes
+- #### Install dbeaver
+
   ```shell
-  sudo pacman -S gnome-boxes
+  yay -S dbeaver
   ```
+
+- #### Install lx-music
+
+  ```shell
+  yay -S lx-music-desktop-git
+  # download https://soso.lanzouj.com/b00p9c94f#8mno
+  ```
+
+  <!-- - #### Install boxes -->
+  <!--   ```shell -->
+  <!--   sudo pacman -S gnome-boxes -->
+  <!--   ``` -->
 
 ---
 
 # Optimized Manjaro
 
+### Uninstall the software
+
+```shell
+sudo pacman -Rs firefox
+sudo pacman -Rs manjaro-hello
+```
+
+### Beautify Manjaro
 ```shell
 git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
 cd ~/WorkingDocument/Manjaro/
@@ -327,4 +352,3 @@ mv WhiteSur-Light/ ~/.themes
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
 Or go to `google.com` search for **gnome-look** and download it yourself
-
