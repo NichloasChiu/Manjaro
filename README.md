@@ -171,9 +171,9 @@
 
 - #### Install tree-sitter-cli
 
-```shell
-sudo pacman -S tree-sitter-cli
-```
+  ```shell
+  sudo pacman -S tree-sitter-cli
+  ```
 
 - #### Install ripgrep
 
