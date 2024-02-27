@@ -317,10 +317,13 @@
   # configuration lx-music-desktop
   ```
 
-  <!-- - #### Install boxes -->
-  <!--   ```shell -->
-  <!--   sudo pacman -S gnome-boxes -->
-  <!--   ``` -->
+- #### Install joshuto
+
+  ```shell
+  sudo pacman -S joshuto bat
+  git
+  chmod 775 ~/.config/joshuto/preview_file.sh
+  ```
 
 ---
 
@@ -329,7 +332,7 @@
 ### Uninstall the software
 
 ```shell
-sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel 
+sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes
 ```
 
 ### Beautify Manjaro
