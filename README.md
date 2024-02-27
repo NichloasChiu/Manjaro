@@ -296,6 +296,7 @@
   ```shell
   yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn
   yay -S wps-office-fonts ttf-ms-fonts
+  yay -S libtiff5
   ```
 
   Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
