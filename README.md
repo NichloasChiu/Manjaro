@@ -121,6 +121,7 @@
   # Install dpkg
   sudo pacman -S dpkg
   sudo dpkg -i ~/下载/PigchaClient.deb
+  rm -rf ~/下载/
   ```
 
 - #### Install ohmyzsh
@@ -244,8 +245,6 @@
 
   ```shell
   sudo pacman -S alacritty
-  sudo pacman -S nerd-fonts-jetbrains-mono
-  git clone https://github.com/NichloasChiu/MyAlacrittyConfiguration.git ~/.config/alacritty
   ```
 
   Manually install references[alacritty-github](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)  
@@ -257,13 +256,33 @@
   sudo pacman -S nerd-fonts-jetbrains-mono
   ```
 
-- #### Configure zsh/tmux/alacritty/p10k themes
+- #### Install ulauncher-git
+
+  ```shell
+  yay -S ulauncher-git
+  # Install translate-shell-git
+  yay -S translate-shell-git
+  # Open your ulauncher once
+  cd $HOME/.local/share/ulauncher/extensions
+  git clone https://github.com/NastuzziSamy/ulauncher-translate.git
+  sudo pacman -S fzf fd
+  git clone https://github.com/hillaryychan/ulauncher-fzf.git
+  ```
+
+- #### Install joshuto
+
+  ```shell
+  sudo pacman -S joshuto bat
+  chmod +x ~/.config/joshuto/preview_file.sh
+  ```
+
+- #### Configure zsh/tmux/alacritty/p10k themes/joshuto/ulauncher/
 
   ```shell
   mkdir -p ~/WorkingDocument/
-  git clone https://github.com/NichloasChiu/MyZshTmuxConfigFile.git ~/WorkingDocument/MyZshTmuxConfigFile
-  cd ~/WorkingDocument/MyZshTmuxConfigFile/
-  chmod 775 OverrideConf.sh
+  git clone https://github.com/NichloasChiu/profile.git ~/WorkingDocument/profile/
+  cd ~/WorkingDocument/profile/
+  sudo chmod +x OverrideConf.sh
   ./OverrideConf.sh
   ```
 
@@ -287,21 +306,6 @@
   yay -S wemeet
   ```
 
-- #### Install ulauncher-git
-
-  ```shell
-  yay -S ulauncher-git
-  # Install translate-shell-git
-  yay -S translate-shell-git
-  # Open your ulauncher once
-  cd $HOME/.local/share/ulauncher/extensions
-  git clone https://github.com/NastuzziSamy/ulauncher-translate.git
-  cp ~/WorkingDocument/MyZshTmuxConfigFile/init.trans ~/.translate-shell
-  sudo pacman -S fzf
-  sudo pacman -S fd
-  git clone https://github.com/hillaryychan/ulauncher-fzf.git
-  ```
-
 - #### Install dbeaver
 
   ```shell
@@ -315,14 +319,6 @@
   # download https://soso.lanzouj.com/b00p9c94f#8mno
   unzip ~/下载/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
   # configuration lx-music-desktop
-  ```
-
-- #### Install joshuto
-
-  ```shell
-  sudo pacman -S joshuto bat
-  git
-  chmod 775 ~/.config/joshuto/preview_file.sh
   ```
 
 ---
@@ -339,20 +335,8 @@ sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gno
 
 ```shell
 git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
-cd ~/WorkingDocument/Manjaro/
-tar -xf Mojave-Light-themes.tar.xz
-tar -xf WhiteSurIcon.tar.xz
-tar -xf WhiteSur-Light-themes.tar.xz
-tar -xf 01-McMojave-circle-icons.tar.xz
-mkdir -p  ~/.icons/
-mv McMojave-circle-dark/ ~/.icons
-mv McMojave-circle/ ~/.icons
-mv McMojave-circle-light/ ~/.icons
-mv WhiteSur/ ~/.icons
-mv WhiteSur-dark/ ~/.icons
-mkdir -p  ~/.themes
-mv Mojave-Light/ ~/.themes
-mv WhiteSur-Light/ ~/.themes
+chmod +x ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
+sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
 ```
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
