@@ -322,6 +322,64 @@
   # configuration lx-music-desktop
   ```
 
+- #### Install masterpdfeditor
+
+  ```shell
+  yay -S scribus
+  ```
+
+- #### .exe-open
+
+  ```shell
+  # yay -S deepin-wine5
+  ```
+
+- #### Install KVM
+
+  ```shell
+  sudo pacman -S qemu libvirt virt-manager
+  ```
+
+  ##### Instructions for installing the package:
+
+  | PackageName  |              Description              |
+  | :----------: | :-----------------------------------: |
+  |     qemu     |      一个开源机器模拟器和虚拟器       |
+  |   libvirt    | 用于控制 KVM、QEMU 等虚拟化引擎的 API |
+  |   dnsmasq    |    轻量级 DNS 转发器和 DHCP 服务器    |
+  | bridge-utils |   用于配置 Linux 以太网桥的实用程序   |
+  |  libguestfs  | 用于修改虚拟机 (VM) 磁盘映像的工具集  |
+  |  edk2-ovmf   |            如果要使用UEFI             |
+
+  ##### Allow non-root users to use KVM/QEMU virtualization:
+
+  1.  取消注释选项 \unix_sock_group\ 并输入组名 \libvirt\
+  2.  取消注释选项 \unix_sock_rw_perms\ 并将权限保留为默认值 \0770\
+  3.  `sudo usermod -a -G libvirt username`
+  4.  `sudo systemctl restart libvirtd`
+
+  ##### Configure the virtual machine network:
+
+  1. `vim /etc/sysconfig/network-scripts/ifcfg-enp1s0` update onboot=yes
+  2. `nmcli c reload`
+
+  ##### Turn off the firewall
+
+  ```shell
+  systemctl stop firewalld.service
+  systemctl disable firewalld.service
+  ```
+
+  ##### Common commands:
+
+  | CommandsName                   |   Description    |
+  | :----------------------------- | :--------------: |
+  | systemctl enable libvirtd      |   开机自启服务   |
+  | systemctl start libvirtd       |     启动服务     |
+  | virt-manager                   | 开启virt-manager |
+  | systemctl restart libvirtd     |     重启服务     |
+  | systemctl stop libvirtd.socket |     停止服务     |
+
 ---
 
 # Optimized Manjaro
