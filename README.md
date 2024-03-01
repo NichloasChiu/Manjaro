@@ -313,6 +313,17 @@
   yay -S dbeaver
   ```
 
+- #### Install Finereport
+
+  Download the Linux installation script from [the official website](https://www.finereport.com/product/download)
+
+  ```shell
+  chmod +x ~/下载/linux_amd64_FineReport-CN.sh
+  sh ~/下载/linux_amd64_FineReport-CN.sh
+  # Enter the activation code
+  19c6d140-79de5fa15-c10b-030409846b1d
+  ```
+
 - #### Install lx-music
 
   ```shell
@@ -372,15 +383,15 @@
 
   ##### Common commands:
 
-  | CommandsName                           | Description      |
-  | :-----------------------------         | :--------------: |
-  | systemctl enable libvirtd              | 开机自启服务     |
-  | systemctl start libvirtd               | 启动服务         |
+  | CommandsName                           |   Description    |
+  | :------------------------------------- | :--------------: |
+  | systemctl enable libvirtd              |   开机自启服务   |
+  | systemctl start libvirtd               |     启动服务     |
   | virt-manager                           | 开启virt-manager |
-  | systemctl restart libvirtd             | 重启服务         |
-  | systemctl stop libvirtd.socket         | 停止服务         |
-  | sudo virsh net-list --all              | 查看是否开启     |
-  | sudo virsh net-start --network default | 开启网络         |
+  | systemctl restart libvirtd             |     重启服务     |
+  | systemctl stop libvirtd.socket         |     停止服务     |
+  | sudo virsh net-list --all              |   查看是否开启   |
+  | sudo virsh net-start --network default |     开启网络     |
 
 ---
 
