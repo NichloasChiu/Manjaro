@@ -372,10 +372,11 @@
 
   ##### Allow non-root users to use KVM/QEMU virtualization:
 
-  1.  取消注释选项 \unix_sock_group\ 并输入组名 \libvirt\
-  2.  取消注释选项 \unix_sock_rw_perms\ 并将权限保留为默认值 \0770\
-  3.  `sudo usermod -a -G libvirt username`
-  4.  `sudo systemctl restart libvirtd`
+  1. `sudo vi /etc/libvirt/libvirtd.conf`
+  2.  取消注释选项 \unix_sock_group\ 并输入组名 \libvirt\
+  3.  取消注释选项 \unix_sock_rw_perms\ 并将权限保留为默认值 \0770\
+  4.  `sudo usermod -a -G libvirt username`
+  5.  `sudo systemctl restart libvirtd`
 
   ##### Configure the virtual machine network:
 
@@ -421,3 +422,9 @@ sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
 Or go to `google.com` search for **gnome-look** and download it yourself
+
+---
+# Frequently asked Questions
+1. **The disk cannot read the error message "wrong fs type,bad option,bad superblock on"**  
+   If you have a hard disk fs problem, you can use `sudo ntfsfix -d /dev/sda1` 
+   to solve it, please click the webpage for details
