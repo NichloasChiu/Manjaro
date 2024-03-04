@@ -125,11 +125,11 @@
   Open [the official website](https://pigpigchacha.github.io/officialsite) to download the Linux version deb installation file
 
   ```shell
-  unzip ~/Downloads/PigchaClient_deb.zip -d ~/下载/
+  unzip ~/下载/PigchaClient_deb.zip -d ~/下载/
   # Install dpkg
   sudo pacman -S dpkg
-  sudo dpkg -i ~/Downloads/PigchaClient.deb
-  rm -rf ~/Downloads/
+  sudo dpkg -i ~/下载/PigchaClient.deb
+  rm -rf ~/下载/
   ```
 
 - #### Install ohmyzsh
@@ -326,8 +326,8 @@
   Download the Linux installation script from [the official website](https://www.finereport.com/product/download)
 
   ```shell
-  chmod +x ~/Downloads/linux_amd64_FineReport-CN.sh
-  sh ~/Downloads/linux_amd64_FineReport-CN.sh
+  chmod +x ~/下载/linux_amd64_FineReport-CN.sh
+  sh ~/下载/linux_amd64_FineReport-CN.sh
   # Enter the activation code
   19c6d140-79de5fa15-c10b-030409846b1d
   ```
@@ -337,11 +337,11 @@
   ```shell
   yay -S lx-music-desktop-git
   # download https://soso.lanzouj.com/b00p9c94f#8mno
-  unzip ~/Downloads/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
+  unzip ~/下载/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
   # configuration lx-music-desktop
   ```
 
-- #### Install masterpdfeditor
+- #### Install pdfEditor
 
   ```shell
   yay -S scribus
@@ -409,7 +409,7 @@
 ### Uninstall the software
 
 ```shell
-sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes
+sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes  lollypop
 ```
 
 ### Beautify Manjaro
