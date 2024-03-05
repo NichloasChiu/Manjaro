@@ -315,6 +315,11 @@
   yay -S wemeet
   ```
 
+- #### Install XDM
+  https://xtremedownloadmanager.com/#google_vignette
+  ```shell
+  ```
+
 - #### Install dbeaver
 
   ```shell
@@ -345,6 +350,7 @@
 
   ```shell
   yay -S scribus
+  sudo pacman -S poppler
   ```
 
 - #### .exe-open
