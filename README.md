@@ -316,8 +316,9 @@
   ```
 
 - #### Install XDM
-  https://xtremedownloadmanager.com/#google_vignette
+  [Download XDM](https://xtremedownloadmanager.com/#downloads)
   ```shell
+  tar -xf <XDM-name>
   ```
 
 - #### Install dbeaver
@@ -408,6 +409,12 @@
   | sudo virsh net-list --all              |   查看是否开启   |
   | sudo virsh net-start --network default |     开启网络     |
 
+
+- #### Install easystroke
+
+  ```shell
+  yay -S easystroke
+  ```
 ---
 
 # Optimized Manjaro
@@ -424,10 +431,22 @@ sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gno
 git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
 chmod +x ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
 sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
+https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+https://github.com/vinceliuice/WhiteSur-gtk-theme
 ```
+
+### Install Gnome shell Extension
+| Ext-name             |
+| --------------       |
+| Unblank screen saver |
+|blur-my-shell|
+
+
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
 Or go to `google.com` search for **gnome-look** and download it yourself
+
+
 
 ---
 # Frequently asked Questions
