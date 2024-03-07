@@ -219,14 +219,14 @@
 - #### Install nodejs
   ```shell
   yay -S nodejs
-  # 或者查询指定lts版后安装
+  # Or query the specified LTS version and install it
   yay nodejs-lts
   ```
 - #### Install npm
 
   ```shell
   yay -S npm
-  # 查看node版本与npm版本
+  # Check the node version and npm version
   node --version
   npm --version
   ```
@@ -309,7 +309,7 @@
 
   Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
 
-- #### Install wemeet(腾讯会议)
+- #### Install wemeet
 
   ```shell
   yay -S wemeet
@@ -357,7 +357,7 @@
 - #### .exe-open
 
   ```shell
-  # yay -S deepin-wine5
+  yay -S deepin-wine5
   ```
 
 - #### Install KVM
@@ -366,55 +366,12 @@
   sudo pacman -S qemu libvirt virt-manager
   ```
 
-  ##### Instructions for installing the package:
-
-  | PackageName  |              Description              |
-  | :----------: | :-----------------------------------: |
-  |     qemu     |      一个开源机器模拟器和虚拟器       |
-  |   libvirt    | 用于控制 KVM、QEMU 等虚拟化引擎的 API |
-  |   dnsmasq    |    轻量级 DNS 转发器和 DHCP 服务器    |
-  | bridge-utils |   用于配置 Linux 以太网桥的实用程序   |
-  |  libguestfs  | 用于修改虚拟机 (VM) 磁盘映像的工具集  |
-  |  edk2-ovmf   |            如果要使用UEFI             |
-
-  ##### Allow non-root users to use KVM/QEMU virtualization:
-
-  1. `sudo vi /etc/libvirt/libvirtd.conf`
-  2.  取消注释选项 \unix_sock_group\ 并输入组名 \libvirt\
-  3.  取消注释选项 \unix_sock_rw_perms\ 并将权限保留为默认值 \0770\
-  4.  `sudo usermod -a -G libvirt username`
-  5.  `sudo systemctl restart libvirtd`
-
-  ##### Configure the virtual machine network:
-
-  1. `vim /etc/sysconfig/network-scripts/ifcfg-enp1s0` update onboot=yes
-  2. `nmcli c reload`
-
-  ##### Turn off the firewall
-
-  ```shell
-  systemctl stop firewalld.service
-  systemctl disable firewalld.service
-  ```
-
-  ##### Common commands:
-
-  | CommandsName                           |   Description    |
-  | :------------------------------------- | :--------------: |
-  | systemctl enable libvirtd              |   开机自启服务   |
-  | systemctl start libvirtd               |     启动服务     |
-  | virt-manager                           | 开启virt-manager |
-  | systemctl restart libvirtd             |     重启服务     |
-  | systemctl stop libvirtd.socket         |     停止服务     |
-  | sudo virsh net-list --all              |   查看是否开启   |
-  | sudo virsh net-start --network default |     开启网络     |
-
-
 - #### Install easystroke
 
   ```shell
   yay -S easystroke
   ```
+
 ---
 
 # Optimized Manjaro
@@ -431,16 +388,16 @@ sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gno
 git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
 chmod +x ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
 sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
-https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-https://github.com/vinceliuice/WhiteSur-gtk-theme
 ```
+Open `/etc/profile` and insert `export GTK_THEME=WhiteSur-Light` after `export PATH`, and finally reboot to fix the task manager button ignoring theme issue
 
 ### Install Gnome shell Extension
-| Ext-name             |
-| --------------       |
-| Unblank screen saver |
-|blur-my-shell|
-
+| Ext-name                       |
+| --------------                 |
+| Unblank screen saver           |
+| blur-my-shell                  |
+| Compiz alike magic lamp effect |
+| Resource Monitor               |
 
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  

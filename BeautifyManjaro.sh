@@ -31,13 +31,27 @@ tar -xf 01-McMojave-circle-icons.tar.xz
 if_mycmd
 
 VARI="$HOME/.icons/"
-mkdir_func 
-mv McMojave-circle-dark/ $VARI
-mv McMojave-circle/ $VARI
-mv McMojave-circle-light/  $VARI
-mv WhiteSur/ $VARI
-mv WhiteSur-dark/ $VARI
+mkdir_func
+cp -rf ~/WorkingDocument/Manjaro/McMojave-circle-dark/ $VARI
+if_mycmd
+cp -rf ~/WorkingDocument/Manjaro/McMojave-circle/ $VARI
+if_mycmd
+cp -rf ~/WorkingDocument/Manjaro/McMojave-circle-light/ $VARI
+if_mycmd
+cp -rf ~/WorkingDocument/Manjaro/WhiteSur/ $VARI
+if_mycmd
 VARI="$HOME/.themes/"
-mkdir_func 
-mv Mojave-Light/ $VARI
-mv WhiteSur-Light/ $VARI
+mkdir_func
+cp -rf ~/WorkingDocument/Manjaro/Mojave-Light/ $VARI
+if_mycmd
+cp -rf ~/WorkingDocument/Manjaro/WhiteSur-Light/ $VARI
+if_mycmd
+cp -rf ~/WorkingDocument/Manjaro/WhiteSur-dark/ $VARI
+if_mycmd
+rm -rf ~/WorkingDocument/Manjaro/WhiteSur/
+rm -rf ~/WorkingDocument/Manjaro/Mojave-Light/
+rm -rf ~/WorkingDocument/Manjaro/McMojave-circle-light/
+rm -rf ~/WorkingDocument/Manjaro/McMojave-circle-dark/
+rm -rf ~/WorkingDocument/Manjaro/McMojave-circle/
+rm -rf ~/WorkingDocument/Manjaro/WhiteSur-dark/
+rm -rf ~/WorkingDocument/Manjaro/WhiteSur-Light
