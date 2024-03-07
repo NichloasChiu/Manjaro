@@ -403,6 +403,12 @@ Open `/etc/profile` and insert `export GTK_THEME=WhiteSur-Light` after `export P
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
 Or go to `google.com` search for **gnome-look** and download it yourself
 
+**Installation extensions**
+```shell
+yay -S chrome-gnome-shell
+```
+Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
+
 
 
 ---
