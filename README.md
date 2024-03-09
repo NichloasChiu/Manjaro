@@ -309,10 +309,10 @@
 
   Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
 
-- #### Install wemeet
+- #### Install wemeet QQ
 
   ```shell
-  yay -S wemeet
+  yay -S wemeet linuxqq-appimage
   ```
 
 - #### Install XDM
@@ -398,6 +398,7 @@ Open `/etc/profile` and insert `export GTK_THEME=WhiteSur-Light` after `export P
 | blur-my-shell                  |
 | Compiz alike magic lamp effect |
 | Resource Monitor               |
+| Input Method Panel             |
 
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
