@@ -30,6 +30,9 @@ if_mycmd
 tar -xf 01-McMojave-circle-icons.tar.xz
 if_mycmd
 
+tar -xf WhiteSur-cursors.tar.xz
+if_mycmd
+
 VARI="$HOME/.icons/"
 mkdir_func
 cp -rf ~/WorkingDocument/Manjaro/McMojave-circle-dark/ $VARI
@@ -40,6 +43,9 @@ cp -rf ~/WorkingDocument/Manjaro/McMojave-circle-light/ $VARI
 if_mycmd
 cp -rf ~/WorkingDocument/Manjaro/WhiteSur/ $VARI
 if_mycmd
+cp -rf ~/WorkingDocument/Manjaro/WhiteSur-cursors/ $VARI
+if_mycmd
+
 VARI="$HOME/.themes/"
 mkdir_func
 cp -rf ~/WorkingDocument/Manjaro/Mojave-Light/ $VARI
@@ -48,10 +54,7 @@ cp -rf ~/WorkingDocument/Manjaro/WhiteSur-Light/ $VARI
 if_mycmd
 cp -rf ~/WorkingDocument/Manjaro/WhiteSur-dark/ $VARI
 if_mycmd
-rm -rf ~/WorkingDocument/Manjaro/WhiteSur/
-rm -rf ~/WorkingDocument/Manjaro/Mojave-Light/
-rm -rf ~/WorkingDocument/Manjaro/McMojave-circle-light/
-rm -rf ~/WorkingDocument/Manjaro/McMojave-circle-dark/
-rm -rf ~/WorkingDocument/Manjaro/McMojave-circle/
-rm -rf ~/WorkingDocument/Manjaro/WhiteSur-dark/
-rm -rf ~/WorkingDocument/Manjaro/WhiteSur-Light
+
+# Delete cashe
+cd ~/WorkingDocument/Manjaro/ || exit
+rm -rf WhiteSur Mojave-Light McMojave-circle-light McMojave-circle-dark McMojave-circle WhiteSur-dark WhiteSur-Light WhiteSur-cursors
