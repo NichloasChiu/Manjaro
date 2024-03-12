@@ -366,8 +366,9 @@
 - #### Install KVM
 
   ```shell
-  sudo pacman -S qemu libvirt virt-manager --noconfirm
+  sudo pacman -S qemu-arch-extra libvirt virt-manager --noconfirm
   ```
+  For details, see KVM Configuration
 
 - #### Install easystroke
 
