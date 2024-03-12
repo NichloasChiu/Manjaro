@@ -346,6 +346,9 @@
   unzip ~/下载/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
   # configuration lx-music-desktop
   ```
+  If the yay source download is very slow, you can go to 
+  [the official website](https://github.com/lyswhut/lx-music-desktop/releases)
+  to download the pacman package. Use the `sudo pacman -U <package_name>` command to install lx
 
 - #### Install pdfEditor
 
