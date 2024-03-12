@@ -1,11 +1,23 @@
 # Manjaro configuration
 
-- #### Change the home directory from Chinese to English
+<!-- - #### Change the home directory from Chinese to English -->
+<!---->
+<!--   ```shell -->
+<!--   export LANG=en_US -->
+<!--   xdg-user-dirs-gtk-update -->
+<!--   export LANG=zh_CH -->
+<!--   ``` -->
+
+- #### Install PigchaProxy
+
+  Open [the official website](https://pigpigchacha.github.io/officialsite) to download the Linux version deb installation file
 
   ```shell
-  export LANG=en_US
-  xdg-user-dirs-gtk-update
-  export LANG=zh_CH
+  unzip ~/下载/PigchaClient_deb.zip -d ~/下载/
+  # Install dpkg
+  sudo pacman -S dpkg
+  sudo dpkg -i ~/下载/PigchaClient.deb
+  rm -rf ~/下载/
   ```
 
 - #### Replace domestic sources
@@ -120,18 +132,6 @@
   After restarting, you can check the value of swappiness, which is 10: `cat /proc/sys/vm/swappiness`  
   For more information about swap resizing, please refer to "ArchWiki About Swap".
 
-- #### Install PigchaProxy
-
-  Open [the official website](https://pigpigchacha.github.io/officialsite) to download the Linux version deb installation file
-
-  ```shell
-  unzip ~/下载/PigchaClient_deb.zip -d ~/下载/
-  # Install dpkg
-  sudo pacman -S dpkg
-  sudo dpkg -i ~/下载/PigchaClient.deb
-  rm -rf ~/下载/
-  ```
-
 - #### Install ohmyzsh
 
   ```shell
@@ -149,7 +149,7 @@
 
 - #### Install tmux
   ```shell
-  sudo pacman -S tmux
+  sudo pacman -S tmux --noconfirm
   ```
 - #### Install .tmux(oh my tmux)
 
@@ -163,31 +163,31 @@
 - #### Install neofetch
 
   ```shell
-  sudo  pacman -S neofetch
+  sudo  pacman -S neofetch --noconfirm
   ```
 
 - #### Install tree
 
   ```shell
-  sudo pacman -S tree
+  sudo pacman -S tree --noconfirm
   ```
 
 - #### Install neovim
 
   ```shell
-  sudo pacman -S neovim
+  sudo pacman -S neovim --noconfirm
   ```
 
 - #### Install tree-sitter-cli
 
   ```shell
-  sudo pacman -S tree-sitter-cli
+  sudo pacman -S tree-sitter-cli --noconfirm
   ```
 
 - #### Install ripgrep
 
   ```shell
-  sudo pacman -S ripgrep
+  sudo pacman -S ripgrep --noconfirm
   ```
 
 - #### Install go DiskUsage
@@ -201,31 +201,31 @@
 - #### Install bottom
 
   ```shell
-  sudo pacman -S bottom
+  sudo pacman -S bottom --noconfirm
   ```
 
 - #### Install lazygit
 
   ```shell
-  sudo pacman -S lazygit
+  sudo pacman -S lazygit --noconfirm
   ```
 
 - #### Install python
 
   ```shell
-  sudo pacman -Sy python
+  sudo pacman -Sy python --noconfirm
   ```
 
 - #### Install nodejs
   ```shell
-  yay -S nodejs
+  yay -S nodejs --noconfirm
   # Or query the specified LTS version and install it
   yay nodejs-lts
   ```
 - #### Install npm
 
   ```shell
-  yay -S npm
+  yay -S npm --noconfirm
   # Check the node version and npm version
   node --version
   npm --version
@@ -252,7 +252,7 @@
 - #### Install alacritty
 
   ```shell
-  sudo pacman -S alacritty
+  sudo pacman -S alacritty --noconfirm
   ```
 
   Manually install references[alacritty-github](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)  
@@ -261,15 +261,15 @@
 - #### Install fonts
 
   ```shell
-  sudo pacman -S nerd-fonts-jetbrains-mono
+  sudo pacman -S nerd-fonts-jetbrains-mono --noconfirm
   ```
 
 - #### Install ulauncher-git
 
   ```shell
-  yay -S ulauncher-git
+  yay -S ulauncher-git --noconfirm
   # Install translate-shell-git
-  yay -S translate-shell-git
+  yay -S translate-shell-git --noconfirm
   # Open your ulauncher once
   cd $HOME/.local/share/ulauncher/extensions
   git clone https://github.com/NastuzziSamy/ulauncher-translate.git
@@ -280,7 +280,7 @@
 - #### Install joshuto
 
   ```shell
-  sudo pacman -S joshuto bat
+  sudo pacman -S joshuto bat --noconfirm
   chmod +x ~/.config/joshuto/preview_file.sh
   ```
 
@@ -296,15 +296,13 @@
 
 - #### Install Edge
   ```shell
-  sudo pacman -S base-devel
-  yay -S microsoft-edge-stable-bin
+  sudo pacman -S base-devel --noconfirm
+  yay -S microsoft-edge-stable-bin --noconfirm
   ```
 - #### Install WPS：
 
   ```shell
-  yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn
-  yay -S wps-office-fonts ttf-ms-fonts
-  yay -S libtiff5
+  yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn wps-office-fonts ttf-ms-fonts libtiff5 freetype2-wps --noconfirm
   ```
 
   Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
@@ -312,19 +310,21 @@
 - #### Install wemeet QQ
 
   ```shell
-  yay -S wemeet linuxqq-appimage
+  yay -S wemeet linuxqq-appimage --noconfirm
   ```
 
-- #### Install XDM
-  [Download XDM](https://xtremedownloadmanager.com/#downloads)
-  ```shell
-  tar -xf <XDM-name>
-  ```
+<!-- - #### Install XDM -->
+<!---->
+<!--   [Download XDM](https://xtremedownloadmanager.com/#downloads) -->
+<!---->
+<!--   ```shell -->
+<!--   tar -xf <XDM-name> -->
+<!--   ``` -->
 
 - #### Install dbeaver
 
   ```shell
-  yay -S dbeaver
+  yay -S dbeaver --noconfirm
   ```
 
 - #### Install Finereport
@@ -341,7 +341,7 @@
 - #### Install lx-music
 
   ```shell
-  yay -S lx-music-desktop-git
+  yay -S lx-music-desktop-git --noconfirm
   # download https://soso.lanzouj.com/b00p9c94f#8mno
   unzip ~/下载/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
   # configuration lx-music-desktop
@@ -350,26 +350,26 @@
 - #### Install pdfEditor
 
   ```shell
-  yay -S scribus
-  sudo pacman -S poppler
+  yay -S scribus--noconfirm
+  sudo pacman -S poppler --noconfirm
   ```
 
 - #### .exe-open
 
   ```shell
-  yay -S deepin-wine5
+  yay -S deepin-wine5--noconfirm
   ```
 
 - #### Install KVM
 
   ```shell
-  sudo pacman -S qemu libvirt virt-manager
+  sudo pacman -S qemu libvirt virt-manager --noconfirm
   ```
 
 - #### Install easystroke
 
   ```shell
-  yay -S easystroke
+  yay -S easystroke --noconfirm
   ```
 
 ---
@@ -389,31 +389,34 @@ git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
 chmod +x ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
 sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
 ```
+
 Open `/etc/profile` and insert `export GTK_THEME=WhiteSur-Light` after `export PATH`, and finally reboot to fix the task manager button ignoring theme issue
 
 ### Install Gnome shell Extension
+
 | Ext-name                       |
-| --------------                 |
+| ------------------------------ |
 | Unblank screen saver           |
 | blur-my-shell                  |
 | Compiz alike magic lamp effect |
 | Resource Monitor               |
 | Input Method Panel             |
 
-
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
 Or go to `google.com` search for **gnome-look** and download it yourself
 
 **Installation extensions**
+
 ```shell
-yay -S chrome-gnome-shell
+yay -S chrome-gnome-shell --noconfirm
 ```
+
 Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
 
-
-
 ---
+
 # Frequently asked Questions
+
 1. **The disk cannot read the error message "wrong fs type,bad option,bad superblock on"**  
-   If you have a hard disk fs problem, you can use `sudo ntfsfix -d /dev/sda1` 
+   If you have a hard disk fs problem, you can use `sudo ntfsfix -d /dev/sda1`
    to solve it, please click the webpage for details
