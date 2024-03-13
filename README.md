@@ -416,6 +416,7 @@ Open `/etc/profile` and insert `export GTK_THEME=WhiteSur-Light` after `export P
 | Compiz alike magic lamp effect |
 | Resource Monitor               |
 | Input Method Panel             |
+| No overview at start-up        |
 
 **win+a** search for `tweaks`, click **Appearance** to select configuration.  
 Or go to `google.com` search for **gnome-look** and download it yourself
