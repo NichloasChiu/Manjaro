@@ -376,6 +376,17 @@
   yay -S easystroke --noconfirm
   ```
 
+- #### Install teamviewer
+  ```shell
+  pamac build teamviewer
+  systemctl start teamviewerd
+  ```
+
+- #### Install byptop
+  ```shell
+  sudo pacman -S bpytop
+  ```
+
 ---
 
 # Optimized Manjaro
@@ -383,7 +394,7 @@
 ### Uninstall the software
 
 ```shell
-sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop
+sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop
 ```
 
 ### Beautify Manjaro
