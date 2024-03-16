@@ -387,6 +387,17 @@
   sudo pacman -S bpytop
   ```
 
+- #### Install kettle
+  Download or copy the Kettle/JDK 1.8 zip file
+  ```shell
+  # Install gtk2
+  sudo pacman -S gtk2
+  cd kettle-path
+  # Edit the set-pentaho-env.sh in the kettle directory after extraction, and add it
+  JAVA_HOME=/Java 1.8 path/
+  sudo chmod +x *.sh
+  ./spoon.sh
+  ```
 ---
 
 # Optimized Manjaro
