@@ -350,6 +350,12 @@
   [the official website](https://github.com/lyswhut/lx-music-desktop/releases)
   to download the pacman package. Use the `sudo pacman -U <package_name>` command to install lx
 
+- #### Install VLC
+
+  ```shell
+  sudo pacman -S vlc
+  ```
+
 - #### Install pdfEditor
 
   ```shell
@@ -405,7 +411,7 @@
 ### Uninstall the software
 
 ```shell
-sudo pacman -Rs firefox manjaro-hello thunderbird webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop
+sudo pacman -Rs firefox manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather
 ```
 
 ### Beautify Manjaro
