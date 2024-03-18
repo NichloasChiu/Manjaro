@@ -1,5 +1,6 @@
 # Manjaro configuration
 
+I think it's the most comfortable software in the world to use and a must-install
 <!-- - #### Change the home directory from Chinese to English -->
 <!---->
 <!--   ```shell -->
@@ -166,12 +167,6 @@
   sudo  pacman -S neofetch --noconfirm
   ```
 
-- #### Install tree
-
-  ```shell
-  sudo pacman -S tree --noconfirm
-  ```
-
 - #### Install neovim
 
   ```shell
@@ -243,12 +238,6 @@
   nvim
   ```
 
-<!-- - #### Install screenkey -->
-<!---->
-<!--   ```shell -->
-<!--   sudo pacman -S screenkey -->
-<!--   ``` -->
-
 - #### Install alacritty
 
   ```shell
@@ -307,20 +296,6 @@
 
   Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
 
-- #### Install wemeet QQ
-
-  ```shell
-  yay -S wemeet linuxqq-appimage --noconfirm
-  ```
-
-<!-- - #### Install XDM -->
-<!---->
-<!--   [Download XDM](https://xtremedownloadmanager.com/#downloads) -->
-<!---->
-<!--   ```shell -->
-<!--   tar -xf <XDM-name> -->
-<!--   ``` -->
-
 - #### Install dbeaver
 
   ```shell
@@ -353,20 +328,7 @@
 - #### Install VLC
 
   ```shell
-  sudo pacman -S vlc
-  ```
-
-- #### Install pdfEditor
-
-  ```shell
-  yay -S scribus--noconfirm
-  sudo pacman -S poppler --noconfirm
-  ```
-
-- #### .exe-open
-
-  ```shell
-  yay -S deepin-wine5--noconfirm
+  sudo pacman -S vlc --noconfirm
   ```
 
 - #### Install KVM
@@ -376,23 +338,123 @@
   ```
   For details, see KVM Configuration
 
+- #### Install byptop
+  ```shell
+  sudo pacman -S bpytop --noconfirm
+  ```
+
+## Optimized Manjaro
+
+- #### Uninstall the software
+
+  ```shell
+  sudo pacman -Rs firefox manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments
+  ```
+
+- #### Beautify Manjaro
+
+  ```shell
+  git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
+  chmod +x ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
+  sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
+  ```
+
+  Open `/etc/profile` and insert `export GTK_THEME=WhiteSur-Light` after `export PATH`, and finally reboot to fix the task manager button ignoring theme issue
+
+- #### Install Gnome shell Extension
+
+  | Ext-name                       |
+  | ------------------------------ |
+  | Unblank screen saver           |
+  | blur-my-shell                  |
+  | Compiz alike magic lamp effect |
+  | Resource Monitor               |
+  | Input Method Panel             |
+  | No overview at start-up        |
+
+  **win+a** search for `tweaks`, click **Appearance** to select configuration.  
+  Or go to `google.com` search for **gnome-look** and download it yourself
+  
+  **Installation extensions**
+  
+  ```shell
+  yay -S chrome-gnome-shell --noconfirm
+  ```
+  
+  Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
+
+
+## Frequently asked Questions
+
+1. **The disk cannot read the error message "wrong fs type,bad option,bad superblock on"**  
+   If you have a hard disk fs problem, you can use `sudo ntfsfix -d /dev/sda1`
+   to solve it, please click the webpage for details
+
+## Optional software
+
+- #### Install tree
+
+  ```shell
+  sudo pacman -S tree --noconfirm
+  ```
+
+- #### Install screenkey
+
+  ```shell
+  sudo pacman -S screenkey
+  ```
+- #### Install wemeet QQ
+
+  ```shell
+  yay -S wemeet linuxqq-appimage --noconfirm
+  ```
+
+- #### Install XDM
+
+  [Download XDM](https://xtremedownloadmanager.com/#downloads)
+
+  ```shell
+  tar -xf <XDM-name>
+  ```
+- #### Install pdfEditor
+
+  ```shell
+  yay -S scribus --noconfirm
+  sudo pacman -S poppler --noconfirm
+  ```
+
+- #### .exe-open
+
+  ```shell
+  yay -S deepin-wine5 --noconfirm
+  ```
 - #### Install easystroke
 
   ```shell
   yay -S easystroke --noconfirm
   ```
 
-- #### Install teamviewer
+- #### Install Mozilla Thunderbird Mail
+
   ```shell
-  pamac build teamviewer
-  systemctl start teamviewerd
+  yay -S thunderbird --noconfirm
   ```
 
-- #### Install byptop
-  ```shell
-  sudo pacman -S bpytop
-  ```
 
+- #### Install Remote control software
+  - **teamviewer**
+    ```shell
+    pamac build teamviewer
+    systemctl start teamviewerd
+    # Uninstall teamviewer
+    pamac remove teamviewer
+    ```
+  - **sunloginclient**
+    ```shell
+    yay -S sunloginclient
+    sudo systemctl start runsunloginclient.service
+    sudo systemctl enable runsunloginclient.service
+    ```
 - #### Install kettle
   Download or copy the Kettle/JDK 1.8 zip file
   ```shell
@@ -404,52 +466,3 @@
   sudo chmod +x *.sh
   ./spoon.sh
   ```
----
-
-# Optimized Manjaro
-
-### Uninstall the software
-
-```shell
-sudo pacman -Rs firefox manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather
-```
-
-### Beautify Manjaro
-
-```shell
-git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
-chmod +x ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
-sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
-```
-
-Open `/etc/profile` and insert `export GTK_THEME=WhiteSur-Light` after `export PATH`, and finally reboot to fix the task manager button ignoring theme issue
-
-### Install Gnome shell Extension
-
-| Ext-name                       |
-| ------------------------------ |
-| Unblank screen saver           |
-| blur-my-shell                  |
-| Compiz alike magic lamp effect |
-| Resource Monitor               |
-| Input Method Panel             |
-| No overview at start-up        |
-
-**win+a** search for `tweaks`, click **Appearance** to select configuration.  
-Or go to `google.com` search for **gnome-look** and download it yourself
-
-**Installation extensions**
-
-```shell
-yay -S chrome-gnome-shell --noconfirm
-```
-
-Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
-
----
-
-# Frequently asked Questions
-
-1. **The disk cannot read the error message "wrong fs type,bad option,bad superblock on"**  
-   If you have a hard disk fs problem, you can use `sudo ntfsfix -d /dev/sda1`
-   to solve it, please click the webpage for details
