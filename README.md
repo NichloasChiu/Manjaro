@@ -1,6 +1,7 @@
 # Manjaro configuration
 
 I think it's the most comfortable software in the world to use and a must-install
+
 <!-- - #### Change the home directory from Chinese to English -->
 <!---->
 <!--   ```shell -->
@@ -321,7 +322,8 @@ I think it's the most comfortable software in the world to use and a must-instal
   unzip ~/下载/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
   # configuration lx-music-desktop
   ```
-  If the yay source download is very slow, you can go to 
+
+  If the yay source download is very slow, you can go to
   [the official website](https://github.com/lyswhut/lx-music-desktop/releases)
   to download the pacman package. Use the `sudo pacman -U <package_name>` command to install lx
 
@@ -336,6 +338,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   sudo pacman -S qemu-arch-extra libvirt virt-manager --noconfirm
   ```
+
   For details, see KVM Configuration
 
 - #### Install byptop
@@ -374,15 +377,14 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   **win+a** search for `tweaks`, click **Appearance** to select configuration.  
   Or go to `google.com` search for **gnome-look** and download it yourself
-  
+
   **Installation extensions**
-  
+
   ```shell
   yay -S chrome-gnome-shell --noconfirm
   ```
-  
-  Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
 
+  Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
 
 ## Frequently asked Questions
 
@@ -403,6 +405,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   sudo pacman -S screenkey
   ```
+
 - #### Install wemeet QQ
 
   ```shell
@@ -416,6 +419,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   tar -xf <XDM-name>
   ```
+
 - #### Install pdfEditor
 
   ```shell
@@ -428,6 +432,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   yay -S deepin-wine5 --noconfirm
   ```
+
 - #### Install easystroke
 
   ```shell
@@ -439,7 +444,6 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   yay -S thunderbird --noconfirm
   ```
-
 
 - #### Install Remote control software
   - **teamviewer**
@@ -455,6 +459,14 @@ I think it's the most comfortable software in the world to use and a must-instal
     sudo systemctl start runsunloginclient.service
     sudo systemctl enable runsunloginclient.service
     ```
+- #### Install xpad
+
+  Download or copy the Kettle/JDK 1.8 zip file
+
+  ```shell
+  sudo pacman -S xpad --noconfirm
+  ```
+
 - #### Install kettle
   Download or copy the Kettle/JDK 1.8 zip file
   ```shell
@@ -466,6 +478,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo chmod +x *.sh
   ./spoon.sh
   ```
+
 ---
 
 > **Author:** NichloasChiu  
