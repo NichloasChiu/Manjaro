@@ -466,3 +466,10 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo chmod +x *.sh
   ./spoon.sh
   ```
+---
+
+> **Author:** NichloasChiu  
+> **Date of creation:** 2023-11-02  
+> **Contact information:** [Email](NichloasChiu2outlook.com)
+
+---
