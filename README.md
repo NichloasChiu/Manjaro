@@ -234,7 +234,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   rm -rf ~/.local/state/nvim
   rm -rf ~/.cache/nvim
   git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-  git clone https://github.com/NichloasChiu/AstroNvim-config.git ~/.config/nvim/lua/user
+  git clone https://github.com/NichloasChiu/Nvim-config.git ~/.config/nvim/lua/user
   nvim
   ```
 
