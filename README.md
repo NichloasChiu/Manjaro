@@ -351,7 +351,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Uninstall the software
 
   ```shell
-  sudo pacman -Rs firefox manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments
+  sudo pacman -Rs manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments
   ```
 
 - #### Beautify Manjaro
@@ -383,8 +383,16 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   yay -S chrome-gnome-shell --noconfirm
   ```
-
   Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
+
+- #### BeautifyFirefox
+  Firefox beautification has been ported to the `OverrideConf.sh` in the `profile` project,
+  but you need to open `about:config` with firefox, change the following parameters to **true**
+
+  | VALUE                            |
+  | --------------                   |
+  | Browser.tabs.loadBookmarksInTabs |
+  | Browser.tabs.closeTabByDblclick  |
 
 ## Frequently asked Questions
 
