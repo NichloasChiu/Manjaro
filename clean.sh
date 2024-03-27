@@ -9,17 +9,22 @@ sudo pacman -Sc --noconfirm
 sudo pacman -Scc --noconfirm
 sudo journalctl --vacuum-size=50M
 
+function lolcat_command() {
+	command=$1
+	$command | lolcat
+}
+
 function search_soft() {
 	clear
-	echo "Query personal data left"
+	lolcat_command "echo Query personal data left"
 	find ~/.config/ -type d -name "*$1*"
-	echo "---------------------------------------------------------------------------------------------------------------------------"
-	echo "Query leftover system data"
-	echo "---------------------------------------------------------------------------------------------------------------------------"
+	lolcat_command "echo ---------------------------------------------------------------------------------------------------------------------------"
+	lolcat_command "echo Query leftover system data"
+	lolcat_command "echo ---------------------------------------------------------------------------------------------------------------------------"
 	sudo find /usr/share -type d -name "*$1*"
 	sudo find /usr/lib/ -type d -name "*$1*"
-	echo "Query other related files"
-	echo "---------------------------------------------------------------------------------------------------------------------------"
+	lolcat_command "echo Query other related files"
+	lolcat_command "echo ---------------------------------------------------------------------------------------------------------------------------" | lolcat
 	find ~/.cache/ -type d -name "*$1*"
 	find ~/.local/share/ -type d -name "*$1*"
 }
