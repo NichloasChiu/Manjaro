@@ -346,6 +346,15 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo pacman -S bpytop --noconfirm
   ```
 
+- #### Install XDM
+
+  [Download XDM](https://xtremedownloadmanager.com/#downloads)
+
+  ```shell
+  tar -xf xdm-setup-7.2.11.tar.xz
+  ./install.sh
+  ```
+
 ## Optimized Manjaro
 
 - #### Uninstall the software
@@ -420,13 +429,6 @@ I think it's the most comfortable software in the world to use and a must-instal
   yay -S wemeet linuxqq-appimage --noconfirm
   ```
 
-- #### Install XDM
-
-  [Download XDM](https://xtremedownloadmanager.com/#downloads)
-
-  ```shell
-  tar -xf <XDM-name>
-  ```
 
 - #### Install pdfEditor
 
