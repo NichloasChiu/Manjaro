@@ -38,7 +38,7 @@ parameterHints=("echo Query executable file"
 	"echo Query leftover system data"
 	"echo Query other related files"
 	"echo Query other related files")
-# 循环执行命令
+
 function search_soft() {
 	index=0
 	for i in "${findPath[@]}"; do
@@ -60,12 +60,11 @@ else
 	while true; do
 		search_soft $1
 		read -p "Enter the folder path to be deleted (enter \"n\" to stop)" path
-		clear
 		if [ "$path" = "n" ]; then
 			echo "Deleted."
 			break
 		fi
-
+  
 		if [ -d "$path" ]; then
 			rm -rf "$path"
 			echo "Deleted folders: $path"
