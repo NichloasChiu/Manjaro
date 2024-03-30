@@ -342,6 +342,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   For details, see KVM Configuration
 
 - #### Install byptop
+
   ```shell
   sudo pacman -S bpytop --noconfirm
   ```
@@ -392,16 +393,8 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   yay -S chrome-gnome-shell --noconfirm
   ```
+
   Go to [the official website ](https://extensions.gnome.org/)to download the browser plug-in
-
-- #### BeautifyFirefox
-  Firefox beautification has been ported to the `OverrideConf.sh` in the `profile` project,
-  but you need to open `about:config` with firefox, change the following parameters to **true**
-
-  | VALUE                            |
-  | --------------                   |
-  | Browser.tabs.loadBookmarksInTabs |
-  | Browser.tabs.closeTabByDblclick  |
 
 ## Frequently asked Questions
 
@@ -429,7 +422,6 @@ I think it's the most comfortable software in the world to use and a must-instal
   yay -S wemeet linuxqq-appimage --noconfirm
   ```
 
-
 - #### Install pdfEditor
 
   ```shell
@@ -454,6 +446,12 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   yay -S thunderbird --noconfirm
   ```
+- #### Install baidunetdisk
+
+  ```shell
+  yay -S baidunetdisk-bin
+  ```
+
 
 - #### Install Remote control software
   - **teamviewer**
