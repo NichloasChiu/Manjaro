@@ -352,8 +352,9 @@ I think it's the most comfortable software in the world to use and a must-instal
   [Download XDM](https://xtremedownloadmanager.com/#downloads)
 
   ```shell
-  tar -xf xdm-setup-7.2.11.tar.xz
-  ./install.sh
+  tar -xf ~/下载/xdm-setup-7.2.11.tar.xz -C ~/下载/
+  sudo sh ~/下载/install.sh
+  rm  -rf ~/下载/xdm-setup-7.2.11.tar.xz ~/下载/install.sh ~/下载/readme.txt
   ```
 
 ## Optimized Manjaro
