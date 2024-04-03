@@ -402,6 +402,11 @@ I think it's the most comfortable software in the world to use and a must-instal
 1. **The disk cannot read the error message "wrong fs type,bad option,bad superblock on"**  
    If you have a hard disk fs problem, you can use `sudo ntfsfix -d /dev/sda1`
    to solve it, please click the webpage for details
+2. **LINUX and Windows dual system time synchronization**
+   ```shell
+   sudo ntpdate time.windows.com
+   sudo hwclock --localtime --systohc
+   ```
 
 ## Optional software
 
@@ -487,7 +492,67 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo chmod +x *.sh
   ./spoon.sh
   ```
+- #### Install ventoy
+  U disk boot mirror
+  ```shell
+  yay -S ventoy-bin --noconfirm
+  ```
+  
+  - #### Install stacer/bleachbit
+  Disk cleaning: Stacer has more functions, but the disk is not strong for Bleachbit. Bleachbit only uses disk cleaning.
+  ```shell
+  yay -S stacer bleachbit --noconfirm
+  ```
 
+  - #### Install google
+  ```shell
+  sudo pacman -S google-chrome --noconfirm
+  ```
+
+  - #### Install remmina
+  remote desktop
+  ```shell
+  yay -S remmina --noconfirm
+  ```
+
+  - #### Install kate
+  text editor
+  ```shell
+  sudo pacman -S kate --noconfirm
+  ```
+
+  - #### Install pycharm
+  ```shell
+  sudo pacman -S pycharm --noconfirm
+  ```
+
+  - #### Install VSCode
+  ```shell
+  sudo pacman -S visual-studio-code-bin --noconfirm
+  ```
+
+  - #### Install gimp
+  Image Processing
+  ```shell
+  sudo pacman -S gimp --noconfirm
+  ```
+
+  - #### Install pinta
+  Drawing
+  ```shell
+  yay -S pinta --noconfirm
+  ```
+
+  - #### Install obs-studio
+  Professional screen recording
+  ```shell
+  yay -S obs-studio --noconfirm
+  ```
+
+  - #### Install flameshot
+  ```shell
+  sudo pacman -S flameshot --noconfirm
+  ```
 ---
 
 > **Author:** NichloasChiu  

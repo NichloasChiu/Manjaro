@@ -16,6 +16,43 @@ sudo pacman -Scc --noconfirm
 
 sudo journalctl --vacuum-size=50M
 
+package_name=""
+uninstall_flag=""
+
+if [[ "$1" == "-u" ]]; then
+	package_name="$2"
+elif [[ "$2" == "-u" ]]; then
+	package_name="$1"
+fi
+
+# Analysis parameter
+for arg in "$@"; do
+	if [ "$arg" = "-u" ]; then
+		uninstall_flag="y"
+	fi
+done
+
+# Search and uninstall with Pacman
+if [ "$uninstall_flag" = "y" ]; then
+	if pacman -Qs "$package_name" >/dev/null; then
+		echo "Pacman software package has been installed, the search results are as follows:"
+		sudo pacman -Qs "$package_name"
+		read -p "Please enter the full name of the software package to be uninstalled:" package_to_remove
+		sudo pacman -Rns "$package_to_remove"
+	else
+		search_result=$(yay -Qs "$package_name")
+		if [ -z "$search_result" ]; then
+			echo "No software package was found"
+		else
+			echo "The software package is not installed in PACMAN, and you will try to search with Yay"
+			yay -Qs $package_name
+			read -p "Please enter the full name of the software package to be uninstalled:" package_to_remove
+			echo "Find the software package, you will try to uninstall it with yay"
+			yay -Rns "$package_to_remove"
+		fi
+	fi
+fi
+
 function lolcat_command() {
 	command=$1
 	$command | lolcat
@@ -64,7 +101,7 @@ else
 			echo "Deleted."
 			break
 		fi
-  
+
 		if [ -d "$path" ]; then
 			rm -rf "$path"
 			echo "Deleted folders: $path"
