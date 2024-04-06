@@ -77,14 +77,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   Install fcitx5
 
   ```shell
-  sudo pacman -S fcitx5
-  sudo pacman -S fcitx5-configtool
-  sudo pacman -S fcitx5-qt
-  sudo pacman -S fcitx5-gtk
-  sudo pacman -S fcitx5-chinese-addons
-  sudo pacman -S fcitx5-material-color
-  sudo pacman -S kcm-fcitx5
-  sudo pacman -S fcitx5-lua
+  sudo pacman -S fcitx5 fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-material-color fcitx5-lua --noconfirm
   ```
 
 - #### Configure 'environment'
@@ -362,7 +355,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Uninstall the software
 
   ```shell
-  sudo pacman -Rs manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments
+  sudo pacman -Rs manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments gedit endeavour
   ```
 
 - #### Beautify Manjaro
@@ -385,6 +378,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   | Resource Monitor               |
   | Input Method Panel             |
   | No overview at start-up        |
+  | Panel corners                  |
 
   **win+a** search for `tweaks`, click **Appearance** to select configuration.  
   Or go to `google.com` search for **gnome-look** and download it yourself
@@ -419,7 +413,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Install screenkey
 
   ```shell
-  sudo pacman -S screenkey
+  sudo pacman -S screenkey --noconfirm
   ```
 
 - #### Install wemeet QQ
@@ -433,12 +427,13 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   yay -S scribus --noconfirm
   sudo pacman -S poppler --noconfirm
+  # comand : pdfunite pdf1.pdf pdf2.pdf newname.pdf
   ```
 
 - #### .exe-open
 
   ```shell
-  yay -S deepin-wine5 --noconfirm
+  yay -S playonlinux --noconfirm
   ```
 
 - #### Install easystroke
@@ -452,14 +447,15 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   yay -S thunderbird --noconfirm
   ```
+
 - #### Install baidunetdisk
 
   ```shell
   yay -S baidunetdisk-bin
   ```
 
-
 - #### Install Remote control software
+  remote desktop
   - **teamviewer**
     ```shell
     pamac build teamviewer
@@ -473,6 +469,11 @@ I think it's the most comfortable software in the world to use and a must-instal
     sudo systemctl start runsunloginclient.service
     sudo systemctl enable runsunloginclient.service
     ```
+  - **remmina**
+    ```shell
+    yay -S remmina --noconfirm
+    ```
+
 - #### Install xpad
 
   Download or copy the Kettle/JDK 1.8 zip file
@@ -493,66 +494,136 @@ I think it's the most comfortable software in the world to use and a must-instal
   ./spoon.sh
   ```
 - #### Install ventoy
+
   U disk boot mirror
+
   ```shell
   yay -S ventoy-bin --noconfirm
   ```
-  
-  - #### Install stacer/bleachbit
+
+- #### Install stacer/bleachbit
+
   Disk cleaning: Stacer has more functions, but the disk is not strong for Bleachbit. Bleachbit only uses disk cleaning.
+
   ```shell
   yay -S stacer bleachbit --noconfirm
   ```
 
-  - #### Install google
+- #### Install google
+
   ```shell
   sudo pacman -S google-chrome --noconfirm
   ```
 
-  - #### Install remmina
-  remote desktop
-  ```shell
-  yay -S remmina --noconfirm
-  ```
+- #### Install kate
 
-  - #### Install kate
   text editor
+
   ```shell
   sudo pacman -S kate --noconfirm
   ```
 
-  - #### Install pycharm
+- #### Install pycharm
+
   ```shell
   sudo pacman -S pycharm --noconfirm
   ```
 
-  - #### Install VSCode
+- #### Install VSCode
+
   ```shell
   sudo pacman -S visual-studio-code-bin --noconfirm
   ```
 
-  - #### Install gimp
+- #### Install gimp
+
   Image Processing
+
   ```shell
   sudo pacman -S gimp --noconfirm
   ```
 
-  - #### Install pinta
+- #### Install pinta
+
   Drawing
+
   ```shell
   yay -S pinta --noconfirm
   ```
 
-  - #### Install obs-studio
-  Professional screen recording
+- #### Install obs-studio
+
+  Professional ecording
+
   ```shell
   yay -S obs-studio --noconfirm
   ```
 
-  - #### Install flameshot
+- #### Install flameshot
+
   ```shell
   sudo pacman -S flameshot --noconfirm
   ```
+  Next, you need to configure the shortcut keys to start Flameshot when pressing the 
+  shortcut key. In Manjaro, you can complete the configuration through the following steps:  
+  - Enter the system settings
+  - Open the keyboard settings
+  - In the shortcut key option, find screenshot related shortcut key settings
+  - Modify the corresponding shortcut keys to start Flameshot  
+  - Add custom shortcut key, name: `Flameshot` | Command: `flameshot gui`
+
+  After completing the above steps, Flameshot will replace your own screenshot tool to become 
+  your default screenshot tool. Now you can use Flameshot to take a screenshot
+
+  There is a question that I have tried many times that I can't use it in Wayland. I can only use all about the screen on X11. Fucking
+- #### Install gparted
+
+  ```shell
+  sudo pacman -S gparted --noconfirm
+  ```
+
+- #### Install IDEA
+
+  Installation IntelliJ IDEA Community Edition
+
+  ```shell
+  sudo pacman -S intellij-idea-community-edition --noconfirm
+  ```
+
+  OR Installation IntelliJ IDEA Ultimate,
+  Open [the official website](https://www.jetbrains.com/zh-cn/idea/download/download-thanks.html?platform=linux) download
+
+  ```shell
+  tar -zcvf <package-name>
+  touch ~/.local/share/applications/intellij-idea.desktop && v ~/.local/share/applications/intellij-idea.desktop
+  ```
+
+  Add the following information
+
+  ```text
+  [Desktop Entry]
+  # The name of the program will also be displayed on the starter.
+  Name=IntelliJ IDEA
+  # The brief description of the program will also be displayed on the launcher
+  Comment=IntelliJ IDEA
+  # The executable file path of the program
+  Exec=/path/to/idea-IU-231.8770.65/bin/idea.sh
+  # The icon path of the program.
+  Icon=/path/to/idea-IU-231.8770.65/bin/idea.png
+  # It means whether the program is running in the terminal. If you set to True, the program will start in the terminal
+  Terminal=false
+  # Express the type of .desktop file. This is Application, which indicates an application.
+  Type=Application
+  # The category of the program is separated by segmentation. For example, the development; IDE indicates that the program is a IDE development tool
+  Categories=Development;IDE;
+  ```
+
+  Continue to execute commands, empowerment
+
+  ```shell
+  chmod 700 ~/.local/share/applications/intellij-idea.desktop
+  ```
+
 ---
 
 > **Author:** NichloasChiu  
