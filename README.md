@@ -247,19 +247,6 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo pacman -S nerd-fonts-jetbrains-mono --noconfirm
   ```
 
-- #### Install ulauncher-git
-
-  ```shell
-  yay -S ulauncher-git --noconfirm
-  # Install translate-shell-git
-  yay -S translate-shell-git --noconfirm
-  # Open your ulauncher once
-  cd $HOME/.local/share/ulauncher/extensions
-  git clone https://github.com/NastuzziSamy/ulauncher-translate.git
-  sudo pacman -S fzf fd
-  git clone https://github.com/hillaryychan/ulauncher-fzf.git
-  ```
-
 - #### Install joshuto
 
   ```shell
@@ -277,11 +264,19 @@ I think it's the most comfortable software in the world to use and a must-instal
   ./OverrideConf.sh
   ```
 
+- #### Install utools
+
+  ```shell
+  yay -S utools --noconfirm
+  ```
+
 - #### Install Edge
+
   ```shell
   sudo pacman -S base-devel --noconfirm
   yay -S microsoft-edge-stable-bin --noconfirm
   ```
+
 - #### Install WPS：
 
   ```shell
@@ -436,12 +431,6 @@ I think it's the most comfortable software in the world to use and a must-instal
   yay -S playonlinux --noconfirm
   ```
 
-- #### Install easystroke
-
-  ```shell
-  yay -S easystroke --noconfirm
-  ```
-
 - #### Install Mozilla Thunderbird Mail
 
   ```shell
@@ -455,7 +444,9 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```
 
 - #### Install Remote control software
+
   remote desktop
+
   - **teamviewer**
     ```shell
     pamac build teamviewer
@@ -473,14 +464,6 @@ I think it's the most comfortable software in the world to use and a must-instal
     ```shell
     yay -S remmina --noconfirm
     ```
-
-- #### Install xpad
-
-  Download or copy the Kettle/JDK 1.8 zip file
-
-  ```shell
-  sudo pacman -S xpad --noconfirm
-  ```
 
 - #### Install kettle
   Download or copy the Kettle/JDK 1.8 zip file
@@ -564,18 +547,21 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   sudo pacman -S flameshot --noconfirm
   ```
-  Next, you need to configure the shortcut keys to start Flameshot when pressing the 
-  shortcut key. In Manjaro, you can complete the configuration through the following steps:  
+
+  Next, you need to configure the shortcut keys to start Flameshot when pressing the
+  shortcut key. In Manjaro, you can complete the configuration through the following steps:
+
   - Enter the system settings
   - Open the keyboard settings
   - In the shortcut key option, find screenshot related shortcut key settings
-  - Modify the corresponding shortcut keys to start Flameshot  
+  - Modify the corresponding shortcut keys to start Flameshot
   - Add custom shortcut key, name: `Flameshot` | Command: `flameshot gui`
 
-  After completing the above steps, Flameshot will replace your own screenshot tool to become 
+  After completing the above steps, Flameshot will replace your own screenshot tool to become
   your default screenshot tool. Now you can use Flameshot to take a screenshot
 
   There is a question that I have tried many times that I can't use it in Wayland. I can only use all about the screen on X11. Fucking
+
 - #### Install gparted
 
   ```shell
@@ -623,6 +609,33 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```shell
   chmod 700 ~/.local/share/applications/intellij-idea.desktop
   ```
+
+<!-- - #### Install ulauncher-git (Discard, replace it with Utools) -->
+<!---->
+<!--   ```shell -->
+<!--   yay -S ulauncher-git --noconfirm -->
+<!--   # Install translate-shell-git -->
+<!--   yay -S translate-shell-git --noconfirm -->
+<!--   # Open your ulauncher once -->
+<!--   cd $HOME/.local/share/ulauncher/extensions -->
+<!--   git clone https://github.com/NastuzziSamy/ulauncher-translate.git -->
+<!--   sudo pacman -S fzf fd -->
+<!--   git clone https://github.com/hillaryychan/ulauncher-fzf.git -->
+<!--   ``` -->
+<!---->
+<!-- - #### Install xpad (Discard, replace it with Utools) -->
+<!---->
+<!--   Download or copy the Kettle/JDK 1.8 zip file -->
+<!---->
+<!--   ```shell -->
+<!--   sudo pacman -S xpad --noconfirm -->
+<!--   ``` -->
+
+<!-- - #### Install easystroke -->
+<!---->
+<!--   ```shell -->
+<!--   yay -S easystroke --noconfirm -->
+<!--   ``` -->
 
 ---
 
