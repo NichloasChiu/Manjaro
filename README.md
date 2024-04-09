@@ -4,7 +4,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 <!-- - #### Change the home directory from Chinese to English -->
 <!---->
-<!--   ```shell -->
+<!--   ```bash -->
 <!--   export LANG=en_US -->
 <!--   xdg-user-dirs-gtk-update -->
 <!--   export LANG=zh_CH -->
@@ -14,7 +14,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Open [the official website](https://pigpigchacha.github.io/officialsite) to download the Linux version deb installation file
 
-  ```shell
+  ```bash
   unzip ~/下载/PigchaClient_deb.zip -d ~/下载/
   # Install dpkg
   sudo pacman -S dpkg
@@ -24,38 +24,38 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Replace domestic sources
   pacman is manjaro's library management software, the foreign source is too slow and unstable, switch to the domestic source.
-  ```shell
+  ```bash
   sudo pacman-mirrors -i -c China -m rank
   ```
   Arrange out the manjaro China open source mirror site and pop up (note the case) of the Tsinghua source I selected
 - #### Add an AUR source
   Manjaro is based on Arch, and it is also possible to use Arch's rich and complete source AUR, open the terminal, and enter
-  ```shell
+  ```bash
   sudo nano /etc/pacman.conf
   ```
   Ctrl + S Save, Ctrl + X Exit  
   Add the following at the end
-  ```shell
+  ```bash
   [archlinuxcn]
   SigLevel = Optional TrustedOnly
   Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
   ```
 - #### Update By AUR
 
-  ```shell
+  ```bash
   sudo pacman -Syyu
   ```
 
 - #### Install "archlinuxcn-keyring" Package Import GPG key
 
-  ```shell
+  ```bash
   sudo pacman-key --lsign-key "farseerfc@archlinux.org"
   sudo pacman -S archlinuxcn-keyring
   ```
 
 - #### Install yay
 
-  ```shell
+  ```bash
   sudo pacman -Sy archlinuxcn-keyring haveged
   sudo systemctl enable haveged
   sudo pacman-key --init
@@ -66,23 +66,23 @@ I think it's the most comfortable software in the world to use and a must-instal
   yay -Syyu && yay -Sys
   ```
 
-- #### Install the input method
+- #### Install fcitx5
 
   delete Fcitx4
 
-  ```shell
+  ```bash
   sudo pacman -Rs $(pacman -Qsq fcitx)
   ```
 
   Install fcitx5
 
-  ```shell
+  ```bash
   sudo pacman -S fcitx5 fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-material-color fcitx5-lua --noconfirm
   ```
 
-- #### Configure 'environment'
+  Configure environment
 
-  ```shell
+  ```bash
   sudo chmod 777 /etc/environment
   vi  /etc/environment
   ```
@@ -105,7 +105,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   TRM  
   If your manjaro root is installed on an SSD, then it is recommended that you enter the following command, TRM will help clean up the blocks in the SSD, thus extending the life of the SSD:
 
-  ```shell
+  ```bash
   sudo systemctl enable fstrim.timer
   ```
 
@@ -120,7 +120,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   Modify the configuration file `sudo xed /etc/sysctl.d/99-swappiness.conf`  
   Add the following line at the end of the file:
 
-  ```shell
+  ```bash
   vm.swappiness=10
   ```
 
@@ -129,7 +129,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install ohmyzsh
 
-  ```shell
+  ```bash
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -138,17 +138,17 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install p10k
 
-  ```shell
+  ```bash
   git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
   ```
 
 - #### Install tmux
-  ```shell
+  ```bash
   sudo pacman -S tmux --noconfirm
   ```
 - #### Install .tmux(oh my tmux)
 
-  ```shell
+  ```bash
   cd
   git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
@@ -157,31 +157,31 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install neofetch
 
-  ```shell
+  ```bash
   sudo  pacman -S neofetch --noconfirm
   ```
 
 - #### Install neovim
 
-  ```shell
+  ```bash
   sudo pacman -S neovim --noconfirm
   ```
 
 - #### Install tree-sitter-cli
 
-  ```shell
+  ```bash
   sudo pacman -S tree-sitter-cli --noconfirm
   ```
 
 - #### Install ripgrep
 
-  ```shell
+  ```bash
   sudo pacman -S ripgrep --noconfirm
   ```
 
 - #### Install go DiskUsage
 
-  ```shell
+  ```bash
   curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
   chmod +x gdu_linux_amd64
   sudo mv gdu_linux_amd64 /usr/bin/gdu
@@ -189,31 +189,31 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install bottom
 
-  ```shell
+  ```bash
   sudo pacman -S bottom --noconfirm
   ```
 
 - #### Install lazygit
 
-  ```shell
+  ```bash
   sudo pacman -S lazygit --noconfirm
   ```
 
 - #### Install python
 
-  ```shell
+  ```bash
   sudo pacman -Sy python --noconfirm
   ```
 
 - #### Install nodejs
-  ```shell
+  ```bash
   yay -S nodejs --noconfirm
   # Or query the specified LTS version and install it
   yay nodejs-lts
   ```
 - #### Install npm
 
-  ```shell
+  ```bash
   yay -S npm --noconfirm
   # Check the node version and npm version
   node --version
@@ -222,7 +222,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install Astro
 
-  ```shell
+  ```bash
   rm -rf ~/.config/nvim
   rm -rf ~/.local/share/nvim
   rm -rf ~/.local/state/nvim
@@ -234,7 +234,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install alacritty
 
-  ```shell
+  ```bash
   sudo pacman -S alacritty --noconfirm
   ```
 
@@ -243,20 +243,20 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install fonts
 
-  ```shell
+  ```bash
   sudo pacman -S nerd-fonts-jetbrains-mono --noconfirm
   ```
 
 - #### Install joshuto
 
-  ```shell
+  ```bash
   sudo pacman -S joshuto bat --noconfirm
   chmod +x ~/.config/joshuto/preview_file.sh
   ```
 
 - #### Configure zsh/tmux/alacritty/p10k themes/joshuto/ulauncher/
 
-  ```shell
+  ```bash
   mkdir -p ~/WorkingDocument/
   git clone https://github.com/NichloasChiu/profile.git ~/WorkingDocument/profile/
   cd ~/WorkingDocument/profile/
@@ -266,20 +266,20 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install utools
 
-  ```shell
+  ```bash
   yay -S utools --noconfirm
   ```
 
 - #### Install Edge
 
-  ```shell
+  ```bash
   sudo pacman -S base-devel --noconfirm
   yay -S microsoft-edge-stable-bin --noconfirm
   ```
 
 - #### Install WPS：
 
-  ```shell
+  ```bash
   yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn wps-office-fonts ttf-ms-fonts libtiff5 freetype2-wps --noconfirm
   ```
 
@@ -287,7 +287,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install dbeaver
 
-  ```shell
+  ```bash
   yay -S dbeaver --noconfirm
   ```
 
@@ -295,7 +295,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Download the Linux installation script from [the official website](https://www.finereport.com/product/download)
 
-  ```shell
+  ```bash
   chmod +x ~/下载/linux_amd64_FineReport-CN.sh
   sh ~/下载/linux_amd64_FineReport-CN.sh
   # Enter the activation code
@@ -304,7 +304,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install lx-music
 
-  ```shell
+  ```bash
   yay -S lx-music-desktop-git --noconfirm
   # download https://soso.lanzouj.com/b00p9c94f#8mno
   unzip ~/下载/洛雪音乐助手自定义音源\ v1.1.0\ 下载后请先解压.zip -d ~/.config/lx-music-desktop/
@@ -317,21 +317,39 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install VLC
 
-  ```shell
+  ```bash
   sudo pacman -S vlc --noconfirm
   ```
 
 - #### Install KVM
 
-  ```shell
-  sudo pacman -S qemu-arch-extra libvirt virt-manager --noconfirm
+  ```bash
+  sudo pacman -S --needed virt-manager qemu-desktop libvirt edk2-ovmf dnsmasq iptables-nft
+  ```
+
+  For TPM support:
+
+  ```bash
+  sudo pacman -S --asdeps swtpm
+  ```
+  Enable and start service
+
+  ```bash
+  sudo systemctl enable libvirtd.service
+  sudo systemctl start libvirtd.service
+  ```
+
+  Add user to libvirt group to use the system-level virtual machines (qemu:///system)
+
+  ```bash
+  sudo usermod -a -G libvirt $USER
   ```
 
   For details, see KVM Configuration
 
 - #### Install byptop
 
-  ```shell
+  ```bash
   sudo pacman -S bpytop --noconfirm
   ```
 
@@ -339,7 +357,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   [Download XDM](https://xtremedownloadmanager.com/#downloads)
 
-  ```shell
+  ```bash
   tar -xf ~/下载/xdm-setup-7.2.11.tar.xz -C ~/下载/
   sudo sh ~/下载/install.sh
   rm  -rf ~/下载/xdm-setup-7.2.11.tar.xz ~/下载/install.sh ~/下载/readme.txt
@@ -349,13 +367,13 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Uninstall the software
 
-  ```shell
+  ```bash
   sudo pacman -Rs manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments gedit endeavour
   ```
 
 - #### Beautify Manjaro
 
-  ```shell
+  ```bash
   git clone https://github.com/NichloasChiu/Manjaro.git ~/WorkingDocument/Manjaro
   chmod +x ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
   sh ~/WorkingDocument/Manjaro/BeautifyManjaro.sh
@@ -380,7 +398,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   **Installation extensions**
 
-  ```shell
+  ```bash
   yay -S chrome-gnome-shell --noconfirm
   ```
 
@@ -392,7 +410,7 @@ I think it's the most comfortable software in the world to use and a must-instal
    If you have a hard disk fs problem, you can use `sudo ntfsfix -d /dev/sda1`
    to solve it, please click the webpage for details
 2. **LINUX and Windows dual system time synchronization**
-   ```shell
+   ```bash
    sudo ntpdate time.windows.com
    sudo hwclock --localtime --systohc
    ```
@@ -401,25 +419,25 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install tree
 
-  ```shell
+  ```bash
   sudo pacman -S tree --noconfirm
   ```
 
 - #### Install screenkey
 
-  ```shell
+  ```bash
   sudo pacman -S screenkey --noconfirm
   ```
 
 - #### Install wemeet QQ
 
-  ```shell
+  ```bash
   yay -S wemeet linuxqq-appimage --noconfirm
   ```
 
 - #### Install pdfEditor
 
-  ```shell
+  ```bash
   yay -S scribus --noconfirm
   sudo pacman -S poppler --noconfirm
   # comand : pdfunite pdf1.pdf pdf2.pdf newname.pdf
@@ -427,19 +445,19 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### .exe-open
 
-  ```shell
+  ```bash
   yay -S playonlinux --noconfirm
   ```
 
 - #### Install Mozilla Thunderbird Mail
 
-  ```shell
+  ```bash
   yay -S thunderbird --noconfirm
   ```
 
 - #### Install baidunetdisk
 
-  ```shell
+  ```bash
   yay -S baidunetdisk-bin
   ```
 
@@ -448,26 +466,26 @@ I think it's the most comfortable software in the world to use and a must-instal
   remote desktop
 
   - **teamviewer**
-    ```shell
+    ```bash
     pamac build teamviewer
     systemctl start teamviewerd
     # Uninstall teamviewer
     pamac remove teamviewer
     ```
   - **sunloginclient**
-    ```shell
+    ```bash
     yay -S sunloginclient
     sudo systemctl start runsunloginclient.service
     sudo systemctl enable runsunloginclient.service
     ```
   - **remmina**
-    ```shell
+    ```bash
     yay -S remmina --noconfirm
     ```
 
 - #### Install kettle
   Download or copy the Kettle/JDK 1.8 zip file
-  ```shell
+  ```bash
   # Install gtk2
   sudo pacman -S gtk2
   cd kettle-path
@@ -480,7 +498,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   U disk boot mirror
 
-  ```shell
+  ```bash
   yay -S ventoy-bin --noconfirm
   ```
 
@@ -488,13 +506,13 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Disk cleaning: Stacer has more functions, but the disk is not strong for Bleachbit. Bleachbit only uses disk cleaning.
 
-  ```shell
+  ```bash
   yay -S stacer bleachbit --noconfirm
   ```
 
 - #### Install google
 
-  ```shell
+  ```bash
   sudo pacman -S google-chrome --noconfirm
   ```
 
@@ -502,19 +520,19 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   text editor
 
-  ```shell
+  ```bash
   sudo pacman -S kate --noconfirm
   ```
 
 - #### Install pycharm
 
-  ```shell
+  ```bash
   sudo pacman -S pycharm --noconfirm
   ```
 
 - #### Install VSCode
 
-  ```shell
+  ```bash
   sudo pacman -S visual-studio-code-bin --noconfirm
   ```
 
@@ -522,7 +540,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Image Processing
 
-  ```shell
+  ```bash
   sudo pacman -S gimp --noconfirm
   ```
 
@@ -530,7 +548,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Drawing
 
-  ```shell
+  ```bash
   yay -S pinta --noconfirm
   ```
 
@@ -538,13 +556,13 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Professional ecording
 
-  ```shell
+  ```bash
   yay -S obs-studio --noconfirm
   ```
 
 - #### Install flameshot
 
-  ```shell
+  ```bash
   sudo pacman -S flameshot --noconfirm
   ```
 
@@ -564,7 +582,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install gparted
 
-  ```shell
+  ```bash
   sudo pacman -S gparted --noconfirm
   ```
 
@@ -572,14 +590,14 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Installation IntelliJ IDEA Community Edition
 
-  ```shell
+  ```bash
   sudo pacman -S intellij-idea-community-edition --noconfirm
   ```
 
   OR Installation IntelliJ IDEA Ultimate,
   Open [the official website](https://www.jetbrains.com/zh-cn/idea/download/download-thanks.html?platform=linux) download
 
-  ```shell
+  ```bash
   tar -zcvf <package-name>
   touch ~/.local/share/applications/intellij-idea.desktop && v ~/.local/share/applications/intellij-idea.desktop
   ```
@@ -606,13 +624,13 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Continue to execute commands, empowerment
 
-  ```shell
+  ```bash
   chmod 700 ~/.local/share/applications/intellij-idea.desktop
   ```
 
 <!-- - #### Install ulauncher-git (Discard, replace it with Utools) -->
 <!---->
-<!--   ```shell -->
+<!--   ```bash -->
 <!--   yay -S ulauncher-git --noconfirm -->
 <!--   # Install translate-shell-git -->
 <!--   yay -S translate-shell-git --noconfirm -->
@@ -627,13 +645,13 @@ I think it's the most comfortable software in the world to use and a must-instal
 <!---->
 <!--   Download or copy the Kettle/JDK 1.8 zip file -->
 <!---->
-<!--   ```shell -->
+<!--   ```bash -->
 <!--   sudo pacman -S xpad --noconfirm -->
 <!--   ``` -->
 
 <!-- - #### Install easystroke -->
 <!---->
-<!--   ```shell -->
+<!--   ```bash -->
 <!--   yay -S easystroke --noconfirm -->
 <!--   ``` -->
 
