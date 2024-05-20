@@ -383,15 +383,18 @@ I think it's the most comfortable software in the world to use and a must-instal
 
 - #### Install Gnome shell Extension
 
-  | Ext-name                       |
-  | ------------------------------ |
-  | Unblank screen saver           |
-  | blur-my-shell                  |
-  | Compiz alike magic lamp effect |
-  | Resource Monitor               |
-  | Input Method Panel             |
-  | No overview at start-up        |
-  | Panel corners                  |
+  | Ext-name                       | Describe                                                                                                                                        |
+  | ------------------------------ | ------------------------------                                                                                                                  |
+  | Unblank screen saver           | Used to prevent screen protection programs automatically start and lock the screen                                                              |
+  | blur-my-shell                  | The effect of the glass of the glass                                                                                                            |
+  | Compiz alike magic lamp effect | Users to minimize the window when the window to minimize and maximize the window, similar to the magic lamp effect in the CompIz desktop effect |
+  | Astra Monitor                  | Display CPU, GPU, RAM, DISK                                                                                                                     |
+  | Input Method Panel             | Input method panel                                                                                                                              |
+  | No overview at start-up        | No overview at start-up                                                                                                                         |
+  | Panel corners                  | Window rounded                                                                                                                                  |
+  | Coverflow Alt-Tab              | Alt-tab beautify                                                                                                                                |
+  | Clipboard Indicator            | Top rotten shear plate                                                                                                                          |
+
 
   **win+a** search for `tweaks`, click **Appearance** to select configuration.  
   Or go to `google.com` search for **gnome-look** and download it yourself
