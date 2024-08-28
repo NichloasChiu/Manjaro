@@ -563,6 +563,14 @@ I think it's the most comfortable software in the world to use and a must-instal
   yay -S obs-studio --noconfirm
   ```
 
+- #### Install Wechat
+
+  ```bash
+  git clone https://aur.archlinux.org/wechat-universal-bwrap.git
+  cd wechat-universal-bwrap
+  makepkg -si
+  ```
+
 - #### Install flameshot
 
   ```bash
