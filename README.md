@@ -10,7 +10,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 <!--   export LANG=zh_CH -->
 <!--   ``` -->
 
-- #### Install PigchaProxy
+- #### Install PigchaProxy(Ruming software)
 
   Open [the official website](https://pigpigchacha.github.io/officialsite) to download the Linux version deb installation file
 
@@ -20,6 +20,12 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo pacman -S dpkg
   sudo dpkg -i ~/下载/PigchaClient.deb
   rm -rf ~/下载/
+  ```
+
+- #### Install Clash-verge(Ruming software)
+
+  ```bash
+  yay -S clash-verge
   ```
 
 - #### Replace domestic sources
