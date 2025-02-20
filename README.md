@@ -524,6 +524,11 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```bash
   sudo pacman -S google-chrome --noconfirm
   ```
+- #### Install kazam(Screen recording)
+
+  ```bash
+  sudo pacman -S kazam
+  ```
 
 - #### Install kate
 
