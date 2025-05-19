@@ -50,6 +50,8 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   ```bash
   sudo pacman -Syyu
+  # If a package causes a conflict, you can try to ignore the package when updated
+  sudo pacman -Syu --ignore <package-name>
   ```
 
 - #### Install "archlinuxcn-keyring" Package Import GPG key
@@ -295,6 +297,18 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   ```bash
   yay -S dbeaver --noconfirm
+  ```
+  Manjaro runs dbeaver and reports an error Version 1.8.0_442 of the JVM is not suitable for this product.Version:
+  17 or greater is required.
+  
+  ```bash
+  vi /usr/share/dbeaver/dbeaver.ini
+  ```
+  
+  Add at the beginning of the file:
+  ```text
+  -vm
+  /usr/lib/jvm/java-17-openjdk/bin/java
   ```
 
 - #### Install Finereport
