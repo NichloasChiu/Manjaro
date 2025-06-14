@@ -298,14 +298,16 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```bash
   yay -S dbeaver --noconfirm
   ```
+
   Manjaro runs dbeaver and reports an error Version 1.8.0_442 of the JVM is not suitable for this product.Version:
   17 or greater is required.
-  
+
   ```bash
   vi /usr/share/dbeaver/dbeaver.ini
   ```
-  
+
   Add at the beginning of the file:
+
   ```text
   -vm
   /usr/lib/jvm/java-17-openjdk/bin/java
@@ -352,6 +354,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```bash
   sudo pacman -S --asdeps swtpm
   ```
+
   Enable and start service
 
   ```bash
@@ -404,7 +407,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Install Gnome shell Extension
 
   | Ext-name                       | Describe                                                                                                                                        |
-  | ------------------------------ | ------------------------------                                                                                                                  |
+  | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
   | Unblank screen saver           | Used to prevent screen protection programs automatically start and lock the screen                                                              |
   | blur-my-shell                  | The effect of the glass of the glass                                                                                                            |
   | Compiz alike magic lamp effect | Users to minimize the window when the window to minimize and maximize the window, similar to the magic lamp effect in the CompIz desktop effect |
@@ -414,7 +417,6 @@ I think it's the most comfortable software in the world to use and a must-instal
   | Panel corners                  | Window rounded                                                                                                                                  |
   | Coverflow Alt-Tab              | Alt-tab beautify                                                                                                                                |
   | Clipboard Indicator            | Top rotten shear plate                                                                                                                          |
-
 
   **win+a** search for `tweaks`, click **Appearance** to select configuration.  
   Or go to `google.com` search for **gnome-look** and download it yourself
@@ -444,6 +446,12 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   ```bash
   sudo pacman -S tree --noconfirm
+  ```
+
+- #### Install meld(文本比较)
+
+  ```bash
+  sudo pacman -S meld --noconfirm
   ```
 
 - #### Install screenkey
@@ -538,6 +546,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   ```bash
   sudo pacman -S google-chrome --noconfirm
   ```
+
 - #### Install kazam(Screen recording)
 
   ```bash
