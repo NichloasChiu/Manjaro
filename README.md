@@ -166,7 +166,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Install neofetch
 
   ```bash
-  sudo  yay -S neofetch --noconfirm
+  yay -S neofetch --noconfirm
   ```
 
 - #### Install neovim
