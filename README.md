@@ -166,7 +166,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Install neofetch
 
   ```bash
-  sudo  pacman -S neofetch --noconfirm
+  sudo  yay -S neofetch --noconfirm
   ```
 
 - #### Install neovim
@@ -235,8 +235,9 @@ I think it's the most comfortable software in the world to use and a must-instal
   rm -rf ~/.local/share/nvim
   rm -rf ~/.local/state/nvim
   rm -rf ~/.cache/nvim
-  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-  git clone https://github.com/NichloasChiu/Nvim-config.git ~/.config/nvim/lua/user
+  git clone --depth 1 https://github.com/NichloasChiu/nvim-config_lazy.git ~/.config/nvim
+  # git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+  # git clone https://github.com/NichloasChiu/Nvim-config.git ~/.config/nvim/lua/user
   nvim
   ```
 
@@ -252,7 +253,8 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Install fonts
 
   ```bash
-  sudo pacman -S nerd-fonts-jetbrains-mono --noconfirm
+  sudo pacman -S ttf-victor-mono-nerd --noconfirm
+  # sudo pacman -S nerd-fonts-jetbrains-mono --noconfirm
   ```
 
 - #### Install joshuto
