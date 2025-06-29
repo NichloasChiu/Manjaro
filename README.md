@@ -250,12 +250,13 @@ I think it's the most comfortable software in the world to use and a must-instal
   Manually install references[alacritty-github](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)  
   Configuration references:[alacritty-config](https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd)
 
-- #### Install fonts
-
-  ```bash
-  sudo pacman -S ttf-victor-mono-nerd --noconfirm
-  # sudo pacman -S nerd-fonts-jetbrains-mono --noconfirm
-  ```
+<!-- - #### Install fonts -->
+<!---->
+<!--   ```bash -->
+<!---->
+<!--   sudo pacman -S ttf-victor-mono-nerd --noconfirm -->
+<!--   # sudo pacman -S nerd-fonts-jetbrains-mono --noconfirm -->
+<!--   ``` -->
 
 - #### Install joshuto
 
