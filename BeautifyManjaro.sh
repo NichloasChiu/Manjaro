@@ -5,13 +5,6 @@
 # mail:         NichloasChiu@outlook.com
 # Created Time: 2024年02月27日 星期四 22时26分06秒
 ##########################################################################################################
-#!/bin/bash
-###########################################################################################################
-# File Name:    BeautifyManjaro.sh
-# Author:       NichloasChiu
-# mail:         NichloasChiu@outlook.com
-# Created Time: 2024年02月27日 星期四 22时26分06秒
-##########################################################################################################
 set -e # 遇到错误时退出
 
 # 配置
@@ -57,13 +50,28 @@ echo "✅ JetBrainsMono Nerd Font 安装完成！"
 echo "ℹ️ 请重启终端（如 Alacritty）应用新字体。"
 
 cd ~/WorkingDocument/Manjaro/ || exit
+
+# 克隆 WhiteSur 主题仓库
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
+
+# 进入克隆的目录
+cd WhiteSur-gtk-theme
+
+# 执行安装脚本
+./install.sh
+
+# execute firefox Beautify
+./tweaks.sh -f
+
+# 完成提示
+echo "WhiteSur 主题安装完成！"
+
+rm -rf ~/WorkingDocument/Manjaro/WhiteSur-gtk-theme
+
 tar -xf Mojave-Light-themes.tar.xz
 if_mycmd
 
 tar -xf WhiteSurIcon.tar.xz
-if_mycmd
-
-tar -xf WhiteSur-Light-themes.tar.xz
 if_mycmd
 
 tar -xf 01-McMojave-circle-icons.tar.xz
@@ -73,7 +81,7 @@ tar -xf WhiteSur-cursors.tar.xz
 if_mycmd
 
 VARI="$HOME/.icons/"
-mkdir_func
+mkdir_func "$VARI"
 cp -rf ~/WorkingDocument/Manjaro/McMojave-circle-dark/ "$VARI"
 if_mycmd
 cp -rf ~/WorkingDocument/Manjaro/McMojave-circle/ "$VARI"
@@ -86,7 +94,7 @@ cp -rf ~/WorkingDocument/Manjaro/WhiteSur-cursors/ "$VARI"
 if_mycmd
 
 VARI="$HOME/.themes/"
-mkdir_func
+mkdir_func "$VARI"
 cp -rf ~/WorkingDocument/Manjaro/Mojave-Light/ "$VARI"
 if_mycmd
 cp -rf ~/WorkingDocument/Manjaro/WhiteSur-Light/ "$VARI"
