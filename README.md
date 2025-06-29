@@ -10,22 +10,27 @@ I think it's the most comfortable software in the world to use and a must-instal
 <!--   export LANG=zh_CH -->
 <!--   ``` -->
 
-- #### Install PigchaProxy(Ruming software)
+- #### Install ViewTurbo(Ruming software)
 
-  Open [the official website](https://pigpigchacha.github.io/officialsite) to download the Linux version deb installation file
+  Open [the official website](https://web.vtpro.xyz/zh) to download the Linux version deb installation file
 
   ```bash
-  unzip ~/下载/PigchaClient_deb.zip -d ~/下载/
-  # Install dpkg
+  sudo bash -c "$(curl -ksSL https://assets.vtfly.com/others/linux/install.sh)"
+  viewturbocore
+  ```
+
+- #### Install dpkg
+
+  ```bash
   sudo pacman -S dpkg
+  # use dpkg to install the deb package
   sudo dpkg -i ~/下载/PigchaClient.deb
-  rm -rf ~/下载/
   ```
 
 - #### Install Clash-verge(Ruming software)
 
   ```bash
-  yay -S clash-verge
+  yay -S clash-verge-rev
   ```
 
 - #### Replace domestic sources
@@ -72,6 +77,10 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo pacman-key --populate archlinuxcn
   sudo pacman -S yay
   yay -Syyu && yay -Sys
+  # 先卸载已安装的官方版本
+  sudo pacman -R gnome-browser-connector
+  # 重新尝试安装 AUR 版本
+  yay -S gnome-browser-connector-git
   ```
 
 - #### Install fcitx5
@@ -228,7 +237,7 @@ I think it's the most comfortable software in the world to use and a must-instal
   npm --version
   ```
 
-- #### Install Astro
+- #### Configuration nvim
 
   ```bash
   rm -rf ~/.config/nvim
@@ -236,6 +245,9 @@ I think it's the most comfortable software in the world to use and a must-instal
   rm -rf ~/.local/state/nvim
   rm -rf ~/.cache/nvim
   git clone --depth 1 https://github.com/NichloasChiu/nvim-config_lazy.git ~/.config/nvim
+  # error:stat /home/nichloaschiu/.config/lazygit/config.yml: no such file or directory
+  mkdir -p /home/nichloaschiu/.config/lazygit
+  sudo pacman -S lazygit --noconfirm
   # git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
   # git clone https://github.com/NichloasChiu/Nvim-config.git ~/.config/nvim/lua/user
   nvim
@@ -498,7 +510,6 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Install Remote control software
 
   remote desktop
-
   - **teamviewer**
     ```bash
     pamac build teamviewer
@@ -616,7 +627,6 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Next, you need to configure the shortcut keys to start Flameshot when pressing the
   shortcut key. In Manjaro, you can complete the configuration through the following steps:
-
   - Enter the system settings
   - Open the keyboard settings
   - In the shortcut key option, find screenshot related shortcut key settings
