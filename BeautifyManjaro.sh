@@ -11,6 +11,41 @@ set -e # 遇到错误时退出
 FONT_SRC_DIR="$HOME/WorkingDocument/Manjaro/JetBrainsMono" # 字体源目录
 FONT_DIR="$HOME/.local/share/fonts"                        # 字体安装目录
 
+# 定义变量
+REPO_URL="https://github.com/vinceliuice/WhiteSur-gtk-theme.git"
+CLONE_DIR="/tmp/WhiteSur-gtk-theme"
+THEME_DIR="$HOME/.themes"                    # 用户级主题目录
+FIREFOX_PROFILE_DIR="$HOME/.mozilla/firefox" # Firefox 配置目录
+
+# 1. 克隆 WhiteSur 主题仓库（浅克隆，节省时间）
+echo "🔄 正在克隆 WhiteSur GTK 主题仓库..."
+if [ -d "$CLONE_DIR" ]; then
+  echo "⚠️ 检测到临时目录已存在，正在清除..."
+  rm -rf "$CLONE_DIR"
+fi
+git clone "$REPO_URL" "$CLONE_DIR" --depth=1
+
+# 2. 进入目录并安装主题
+echo "📦 正在安装 WhiteSur 主题..."
+cd "$CLONE_DIR" || exit
+./install.sh
+
+# 3. 安装 Firefox 主题适配
+echo "🌐 正在应用 Firefox 主题..."
+if [ -d "$FIREFOX_PROFILE_DIR" ]; then
+  ./tweaks.sh -f --firefox
+else
+  echo "⚠️ 未检测到 Firefox 配置目录，跳过 Firefox 主题安装。"
+fi
+
+# 4. 清理临时文件
+echo "🧹 清理临时文件..."
+rm -rf "$CLONE_DIR"
+
+echo -e "\n✅ WhiteSur GTK 主题安装完成！"
+echo "请前往系统设置 > 外观选择 'WhiteSur' 主题。"
+echo "如需 Firefox 主题，请重启 Firefox 浏览器。"
+
 if_mycmd() {
   if [ $? -ne 0 ]; then
     echo "❌ 错误：脚本执行失败，出现意外情况，请手动配置"
@@ -50,21 +85,6 @@ echo "✅ JetBrainsMono Nerd Font 安装完成！"
 echo "ℹ️ 请重启终端（如 Alacritty）应用新字体。"
 
 cd ~/WorkingDocument/Manjaro/ || exit
-
-# 克隆 WhiteSur 主题仓库
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
-
-# 进入克隆的目录
-cd WhiteSur-gtk-theme
-
-# 执行安装脚本
-./install.sh
-
-# execute firefox Beautify
-./tweaks.sh -f
-
-# 完成提示
-echo "WhiteSur 主题安装完成！"
 
 rm -rf ~/WorkingDocument/Manjaro/WhiteSur-gtk-theme
 
