@@ -107,11 +107,17 @@ I think it's the most comfortable software in the world to use and a must-instal
   Add these in
 
   ```text
-  GTK_IM_MODULE DEFAULT=fcitx
-  QT_IM_MODULE  DEFAULT=fcitx
-  XMODIFIERS    DEFAULT=@im=fcitx
-  INPUT_METHOD  DEFAULT=fcitx
-  SDL_IM_MODULE DEFAULT=fcitx
+  GTK_IM_MODULE=fcitx
+  QT_IM_MODULE=fcitx
+  XMODIFIERS=@im=fcitx
+  INPUT_METHOD=fcitx
+  SDL_IM_MODULE=fcitx
+  # old version
+  # GTK_IM_MODULE DEFAULT=fcitx
+  # QT_IM_MODULE  DEFAULT=fcitx
+  # XMODIFIERS    DEFAULT=@im=fcitx
+  # INPUT_METHOD  DEFAULT=fcitx
+  # SDL_IM_MODULE DEFAULT=fcitx
   ```
 
   Note: In the KDE desktop environment, Fcitx5 will be launched automatically  
