@@ -27,12 +27,6 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo dpkg -i ~/下载/PigchaClient.deb
   ```
 
-- #### Install Clash-verge(Ruming software)
-
-  ```bash
-  yay -S clash-verge-rev
-  ```
-
 - #### Replace domestic sources
   pacman is manjaro's library management software, the foreign source is too slow and unstable, switch to the domestic source.
   ```bash
@@ -55,6 +49,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   ```bash
   sudo pacman -Syyu
+  sudo pacman -S base-devel
   # If a package causes a conflict, you can try to ignore the package when updated
   sudo pacman -Syu --ignore <package-name>
   ```
@@ -81,6 +76,12 @@ I think it's the most comfortable software in the world to use and a must-instal
   sudo pacman -R gnome-browser-connector
   # 重新尝试安装 AUR 版本
   yay -S gnome-browser-connector-git
+  ```
+
+- #### Install Clash-verge(Ruming software)
+
+  ```bash
+  yay -S clash-verge-rev
   ```
 
 - #### Install fcitx5
@@ -257,6 +258,9 @@ I think it's the most comfortable software in the world to use and a must-instal
   # git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
   # git clone https://github.com/NichloasChiu/Nvim-config.git ~/.config/nvim/lua/user
   nvim
+  # Install plugins
+  cd ~/.local/share/nvim/lazy/markdown-preview.nvim
+  npm install
   ```
 
 - #### Install alacritty
@@ -412,7 +416,7 @@ I think it's the most comfortable software in the world to use and a must-instal
 - #### Uninstall the software
 
   ```bash
-  sudo pacman -Rs manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments gedit endeavour
+  sudo pacman -Rs manjaro-hello webapp-manager gnome-chess gnome-mines iagno gnome-maps quadrapassel gnome-boxes lollypop htop totem gnome-weather gnome-contacts fragments  endeavour
   ```
 
 - #### Beautify Manjaro
