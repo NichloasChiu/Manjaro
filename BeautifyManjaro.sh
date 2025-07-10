@@ -4,124 +4,100 @@
 # Author:       NichloasChiu
 # mail:         NichloasChiu@outlook.com
 # Created Time: 2024年02月27日 星期四 22时26分06秒
+# Update Time: 2025年07月09日 星期四 10时50分29秒
 ##########################################################################################################
 set -e # 遇到错误时退出
 
-# 配置
+# ===== 用户配置 =====
 FONT_SRC_DIR="$HOME/WorkingDocument/Manjaro/JetBrainsMono" # 字体源目录
 FONT_DIR="$HOME/.local/share/fonts"                        # 字体安装目录
 
-# 定义变量
-REPO_URL="https://github.com/vinceliuice/WhiteSur-gtk-theme.git"
-CLONE_DIR="/tmp/WhiteSur-gtk-theme"
-THEME_DIR="$HOME/.themes"                    # 用户级主题目录
-FIREFOX_PROFILE_DIR="$HOME/.mozilla/firefox" # Firefox 配置目录
+# ===== 固定变量 =====
+THEME_REPO="https://github.com/vinceliuice/WhiteSur-gtk-theme.git"
+ICON_REPO="https://github.com/vinceliuice/WhiteSur-icon-theme.git"
+CURSOR_REPO="https://github.com/vinceliuice/WhiteSur-cursors.git"
 
-# 1. 克隆 WhiteSur 主题仓库（浅克隆，节省时间）
-echo "🔄 正在克隆 WhiteSur GTK 主题仓库..."
-if [ -d "$CLONE_DIR" ]; then
-  echo "⚠️ 检测到临时目录已存在，正在清除..."
-  rm -rf "$CLONE_DIR"
-fi
-git clone "$REPO_URL" "$CLONE_DIR" --depth=1
+TMP_DIR="/tmp"
+GTK_CLONE_DIR="$TMP_DIR/WhiteSur-gtk-theme"
+ICON_CLONE_DIR="$TMP_DIR/WhiteSur-icon-theme"
+CURSOR_CLONE_DIR="$TMP_DIR/WhiteSur-cursors"
 
-# 2. 进入目录并安装主题
-echo "📦 正在安装 WhiteSur 主题..."
-cd "$CLONE_DIR" || exit
-./install.sh
+# Firefox 配置目录
+FIREFOX_PROFILE_DIR="$HOME/.mozilla/firefox"
 
-# 3. 安装 Firefox 主题适配
-echo "🌐 正在应用 Firefox 主题..."
-if [ -d "$FIREFOX_PROFILE_DIR" ]; then
-  ./tweaks.sh -f --firefox
-else
-  echo "⚠️ 未检测到 Firefox 配置目录，跳过 Firefox 主题安装。"
-fi
+# ===== 函数封装 =====
+# 检查 Firefox 是否在运行
+function check_firefox_closed() {
+  if pgrep -x "firefox" >/dev/null; then
+    echo "⚠️ 检测到 Firefox 正在运行，请关闭后再继续。"
+    read -p "⏸️ 按回车继续（确保 Firefox 已关闭）..."
+  fi
+}
 
-# 4. 清理临时文件
-echo "🧹 清理临时文件..."
-rm -rf "$CLONE_DIR"
+function clone_and_install() {
+  local repo_url=$1
+  local clone_dir=$2
+  local install_script=$3
 
-echo -e "\n✅ WhiteSur GTK 主题安装完成！"
-echo "请前往系统设置 > 外观选择 'WhiteSur' 主题。"
-echo "如需 Firefox 主题，请重启 Firefox 浏览器。"
+  echo "🔄 克隆 $repo_url 到 $clone_dir ..."
+  rm -rf "$clone_dir"
+  git clone --depth=1 "$repo_url" "$clone_dir"
 
-if_mycmd() {
-  if [ $? -ne 0 ]; then
-    echo "❌ 错误：脚本执行失败，出现意外情况，请手动配置"
+  echo "📦 执行安装脚本：$install_script"
+  cd "$clone_dir" || exit
+  bash "$install_script"
+}
+
+function install_fonts_from_local() {
+  echo "🔤 正在安装 JetBrainsMono Nerd Font（使用本地字体）..."
+
+  if [[ ! -d "$FONT_SRC_DIR" ]]; then
+    echo "❌ 错误：字体源目录不存在：$FONT_SRC_DIR"
+    exit 1
+  fi
+
+  mkdir -p "$FONT_DIR"
+
+  echo "📂 从 $FONT_SRC_DIR 复制字体到 $FONT_DIR..."
+  if cp -r "$FONT_SRC_DIR"/* "$FONT_DIR"; then
+    echo "✅ 字体文件复制成功。"
+  else
+    echo "❌ 字体文件复制失败！请检查源目录内容。"
+    exit 1
+  fi
+
+  echo "♻️ 正在刷新字体缓存..."
+  if fc-cache -fv "$FONT_DIR"; then
+    echo "✅ 字体缓存刷新完成。"
+    echo "ℹ️ 请重启终端（如 Alacritty）以应用新字体。"
+  else
+    echo "❌ 字体缓存刷新失败！"
     exit 1
   fi
 }
 
-mkdir_func() {
-  if [ ! -e "$VARI" ]; then
-    mkdir -p "$VARI"
+function apply_firefox_theme() {
+  if [[ -d "$FIREFOX_PROFILE_DIR" ]]; then
+    echo "🌐 应用 Firefox 主题..."
+    "$GTK_CLONE_DIR/tweaks.sh" -f --firefox
+  else
+    echo "⚠️ 未检测到 Firefox 配置目录，跳过 Firefox 主题。"
   fi
 }
 
-# 检查字体源目录是否存在
-if [[ ! -d "$FONT_SRC_DIR" ]]; then
-  echo "❌ 错误：未找到字体源目录 $FONT_SRC_DIR"
-  exit 1
-fi
+# ===== 主流程 =====
+check_firefox_closed
+clone_and_install "$THEME_REPO" "$GTK_CLONE_DIR" "./install.sh"
+apply_firefox_theme
+clone_and_install "$ICON_REPO" "$ICON_CLONE_DIR" "./install.sh"
+clone_and_install "$CURSOR_REPO" "$CURSOR_CLONE_DIR" "./install.sh"
+install_fonts_from_local
 
-# 创建字体目录（如果不存在）
-mkdir -p "$FONT_DIR"
+# ===== 清理临时目录 =====
+echo "🧹 清理临时目录..."
+rm -rf "$GTK_CLONE_DIR" "$ICON_CLONE_DIR" "$CURSOR_CLONE_DIR"
 
-echo "📦 正在复制字体文件到 $FONT_DIR..."
-cp -r "$FONT_SRC_DIR"/* "$FONT_DIR" || {
-  echo "❌ 字体文件复制失败！请检查源目录内容。"
-  exit 1
-}
-
-# 刷新字体缓存
-echo "♻️ 刷新字体缓存..."
-fc-cache -fv "$FONT_DIR" || {
-  echo "❌ 字体缓存刷新失败！"
-  exit 1
-}
-
-echo "✅ JetBrainsMono Nerd Font 安装完成！"
-echo "ℹ️ 请重启终端（如 Alacritty）应用新字体。"
-
-cd ~/WorkingDocument/Manjaro/ || exit
-
-rm -rf ~/WorkingDocument/Manjaro/WhiteSur-gtk-theme
-
-tar -xf Mojave-Light-themes.tar.xz
-if_mycmd
-
-tar -xf WhiteSurIcon.tar.xz
-if_mycmd
-
-tar -xf 01-McMojave-circle-icons.tar.xz
-if_mycmd
-
-tar -xf WhiteSur-cursors.tar.xz
-if_mycmd
-
-VARI="$HOME/.icons/"
-mkdir_func "$VARI"
-cp -rf ~/WorkingDocument/Manjaro/McMojave-circle-dark/ "$VARI"
-if_mycmd
-cp -rf ~/WorkingDocument/Manjaro/McMojave-circle/ "$VARI"
-if_mycmd
-cp -rf ~/WorkingDocument/Manjaro/McMojave-circle-light/ "$VARI"
-if_mycmd
-cp -rf ~/WorkingDocument/Manjaro/WhiteSur/ "$VARI"
-if_mycmd
-cp -rf ~/WorkingDocument/Manjaro/WhiteSur-cursors/ "$VARI"
-if_mycmd
-
-VARI="$HOME/.themes/"
-mkdir_func "$VARI"
-cp -rf ~/WorkingDocument/Manjaro/Mojave-Light/ "$VARI"
-if_mycmd
-cp -rf ~/WorkingDocument/Manjaro/WhiteSur-Light/ "$VARI"
-if_mycmd
-cp -rf ~/WorkingDocument/Manjaro/WhiteSur-dark/ "$VARI"
-if_mycmd
-
-# 删除缓存
-cd ~/WorkingDocument/Manjaro/ || exit
-rm -rf WhiteSur Mojave-Light McMojave-circle-light McMojave-circle-dark McMojave-circle WhiteSur-dark WhiteSur-Light WhiteSur-cursors
+# ===== 完成提示 =====
+echo -e "\n🎉 所有主题、图标、字体安装完成！"
+echo "🖼️ 请前往 系统设置 > 外观 设置 WhiteSur 主题。"
+echo "🦊 Firefox 用户请重启浏览器以生效主题样式。"

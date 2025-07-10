@@ -318,6 +318,22 @@ I think it's the most comfortable software in the world to use and a must-instal
 
   Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
 
+  If the new version of the wps icon does not follow the theme, it is because the whiteSur icon is `wps-office2019-etmain.svg, wps-office2019-kprometheus.svg, wps-office2019-pdfmain.svg, wps-office2019-wppmain.svg, wps-office2019-wpsmain.svg`, and the new version of wps is `wps-office2023-etmain.svg, wps-office2023-kprometheus.svg, wps-office2023-pdfmain.svg, wps-office2023-wppmain.svg` or others, and requires soft connection to 2019
+
+  ```bash
+  cd ~/.local/share/icons/WhiteSur/apps/scalable
+
+  for app in wps et wpp pdf prometheus; do
+    if [[ -f "wps-office2019-${app}main.svg" && ! -e "wps-office2023-${app}main.svg" ]]; then
+      ln -s "wps-office2019-${app}main.svg" "wps-office2023-${app}main.svg"
+    fi
+  done
+
+  gtk-update-icon-cache ~/.local/share/icons/WhiteSur
+
+  # Log out and log in or simply restart the system
+  ```
+
 - #### Install dbeaver
 
   ```bash
