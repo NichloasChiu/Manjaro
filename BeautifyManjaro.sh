@@ -27,10 +27,33 @@ FIREFOX_PROFILE_DIR="$HOME/.mozilla/firefox"
 
 # ===== 函数封装 =====
 # 检查 Firefox 是否在运行
-function check_firefox_closed() {
-  if pgrep -x "firefox" >/dev/null; then
-    echo "⚠️ 检测到 Firefox 正在运行，请关闭后再继续。"
-    read -p "⏸️ 按回车继续（确保 Firefox 已关闭）..."
+check_firefox_closed() {
+  local firefox_pid
+  # 使用 pgrep -x 精确匹配进程名（避免匹配插件进程等）
+  if firefox_pid=$(pgrep -x "firefox"); then
+    echo "⚠️  Firefox 正在运行 (PID: $firefox_pid)，正在尝试关闭..."
+    # 先尝试正常终止（SIGTERM）
+    kill "$firefox_pid" 2>/dev/null
+    # 等待1秒让进程正常退出
+    sleep 1
+
+    # 检查是否仍然存在，若存在则强制终止（SIGKILL）
+    if pgrep -x "firefox" >/dev/null; then
+      echo "🛑  正常关闭失败，正在强制终止..."
+      pkill -9 -x "firefox" 2>/dev/null
+      sleep 0.5 # 给强制终止留出时间
+    fi
+
+    # 最终确认是否已关闭
+    if pgrep -x "firefox" >/dev/null; then
+      echo "❌  无法关闭 Firefox，请手动终止进程后再继续。"
+      read -rp "⏸️  按回车继续（确保 Firefox 已关闭）..."
+      return 1
+    else
+      echo "✅  Firefox 已成功关闭。"
+    fi
+  else
+    echo "ℹ️  Firefox 未运行，继续执行..."
   fi
 }
 
@@ -100,4 +123,7 @@ rm -rf "$GTK_CLONE_DIR" "$ICON_CLONE_DIR" "$CURSOR_CLONE_DIR"
 # ===== 完成提示 =====
 echo -e "\n🎉 所有主题、图标、字体安装完成！"
 echo "🖼️ 请前往 系统设置 > 外观 设置 WhiteSur 主题。"
-echo "🦊 Firefox 用户请重启浏览器以生效主题样式。"
+echo "🦊 Firefox 以生效主题样式。"
+echo "🛑about:config中设置browser.tabs.closeTabByDblclick 为true 以启动双击关闭标签页功能。"
+echo "🛑about:config中设置browser.search.openintab 为true 地址栏搜索直接在新标签页打开。"
+echo "🛑about:config中设置browse.tabs.tabmanager.enabled 为flase 禁用标签管理面板（提升性能）。"
