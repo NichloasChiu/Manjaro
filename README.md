@@ -10,6 +10,8 @@ I think it's the most comfortable software in the world to use and a must-instal
 <!--   export LANG=zh_CH -->
 <!--   ``` -->
 
+If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new version of Manjaro
+
 - #### Install ViewTurbo(Ruming software)
 
   Open [the official website](https://web.vtpro.xyz/zh) to download the Linux version deb installation file
