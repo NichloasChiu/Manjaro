@@ -713,6 +713,37 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
   ```bash
   chmod 700 ~/.local/share/applications/intellij-idea.desktop
   ```
+  - #### Manjaro startup item repair
+    1. Mount the system partition,Make sure your mobile hard drive's root partition and EFI partition are mounted in the Live system
+       ```bash
+       lsblk -f
+       sudo mount /dev/sda2 /mnt
+       sudo mount /dev/sda1 /mnt/boot/efi
+       ```
+    2. Bind mount:To ensure that GRUB installation can be performed under the Live system, bind some necessary system directories
+       ```bash
+        sudo mount --bind /dev /mnt/dev
+        sudo mount --bind /proc /mnt/proc
+        sudo mount --bind /sys /mnt/sys
+        sudo mount --bind /run /mnt/run
+       ```
+    3. Enter the Chroot environment
+       ```bash
+       sudo chroot /mnt
+       ```
+    4. Reinstall GRUB
+       ```bash
+       grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=manjaro --removable
+       ```
+    5. update GRUB configuration file
+       ```bash
+       update-grub
+       ```
+    6. Exit the Chroot environment and unmount the partition
+       ```bash
+       exit
+       sudo umount -R /mnt
+       ```
 
 <!-- - #### Install ulauncher-git (Discard, replace it with Utools) -->
 <!---->
