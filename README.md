@@ -384,6 +384,9 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
 
   ```bash
   sudo pacman -S vlc --noconfirm
+
+  # or
+  sudo pacman -S mpv --noconfirm
   ```
 
 - #### Install KVM
@@ -713,6 +716,7 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
   ```bash
   chmod 700 ~/.local/share/applications/intellij-idea.desktop
   ```
+
   - #### Manjaro startup item repair
     1. Mount the system partition,Make sure your mobile hard drive's root partition and EFI partition are mounted in the Live system
        ```bash
