@@ -84,6 +84,9 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
 
   ```bash
   yay -S clash-verge-rev
+  # Fallback version
+  sudo pacman -S downgrade
+  sudo downgrade clash-verge-rev
   ```
 
 - #### Install fcitx5
