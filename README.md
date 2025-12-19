@@ -463,7 +463,7 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
   | Astra Monitor                  | Display CPU, GPU, RAM, DISK                                                                                                                     |
   | Input Method Panel             | Input method panel                                                                                                                              |
   | No overview at start-up        | No overview at start-up                                                                                                                         |
-  | Panel corners                  | Window rounded                                                                                                                                  |
+  | Rounded Corners                | Window rounded                                                                                                                                  |
   | Coverflow Alt-Tab              | Alt-tab beautify                                                                                                                                |
   | Clipboard Indicator            | Top rotten shear plate                                                                                                                          |
 
