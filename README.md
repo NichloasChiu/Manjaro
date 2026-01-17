@@ -318,15 +318,22 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
 - #### Install WPS：
 
   ```bash
-  yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn wps-office-fonts ttf-ms-fonts libtiff5 freetype2-wps --noconfirm
-  ```
+  # yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn wps-office-fonts ttf-ms-fonts libtiff5 freetype2-wps --noconfirm
 
-  Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
+  # Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
+
+  yay -S wps-office-cn
+  yay -S wps-office-mui-zh-cn
+  ```
 
   If the new version of the wps icon does not follow the theme, it is because the whiteSur icon is `wps-office2019-etmain.svg, wps-office2019-kprometheus.svg, wps-office2019-pdfmain.svg, wps-office2019-wppmain.svg, wps-office2019-wpsmain.svg`, and the new version of wps is `wps-office2023-etmain.svg, wps-office2023-kprometheus.svg, wps-office2023-pdfmain.svg, wps-office2023-wppmain.svg` or others, and requires soft connection to 2019
 
   ```bash
   cd ~/.local/share/icons/WhiteSur/apps/scalable
+
+  # if not above in path  ,then look ~/.icon/WhiteSur path,please move in share  path
+  # mkdir ~/.local/share/icons
+  # mv ~/.icons/WhiteSur ~/.local/share/icons/
 
   for app in wps et wpp pdf prometheus; do
     if [[ -f "wps-office2019-${app}main.svg" && ! -e "wps-office2023-${app}main.svg" ]]; then
