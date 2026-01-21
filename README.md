@@ -323,7 +323,8 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
 
   # Chinese wps11
   sudo rm -rf /usr/lib/office6/mui
-  sudo mv ~/WorkingDocument/profile/office-mui-zh-cn11 /usr/lib/office6/mui
+  sudo cp -r ~/WorkingDocument/profile/wps-office-mui-zh-cn11/mui /usr/lib/office6/
+
 
   # 每个包作用如下：
 
