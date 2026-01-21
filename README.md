@@ -318,10 +318,28 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
 - #### Install WPS：
 
   ```bash
-  # yay -S ttf-wps-fonts wps-office-mui-zh-cn wps-office-mime-cn wps-office-cn wps-office-fonts ttf-ms-fonts libtiff5 freetype2-wps --noconfirm
+  yay -S ttf-wps-fonts wps-office-mime-cn wps-office wps-office-fonts ttf-ms-fonts libtiff5 freetype2-wps --noconfirm
+  # Note: wps requires /wps-office version 11.1.0.11723-2
+
+  # Chinese wps11
+  sudo rm -rf /usr/lib/office6/mui
+  sudo mv ~/WorkingDocument/profile/office-mui-zh-cn11 /usr/lib/office6/mui
+
+  # 每个包作用如下：
+
+  # 包名	作用 / 说明
+  # ttf-wps-fonts	WPS 官方中文字体包（支持简体中文文档显示）
+  # wps-office-mui-zh-cn	WPS 中文界面多语言包（菜单、界面汉化）
+  # wps-office-mime-cn	WPS 文件类型关联（MIME 类型注册，让桌面双击文件自动用 WPS 打开）
+  # wps-office-cn	WPS 主程序核心（包含 et/wps/wpp 等模块）
+  # wps-office-fonts	WPS 自带字体（非中文）
+  # ttf-ms-fonts	Windows 样式字体（Arial, Times New Roman, Calibri 等）
+  # libtiff5	WPS 依赖库，用于处理 TIFF/图片文件
+  # freetype2-wps	WPS 特殊 FreeType 字体渲染库（增强字体显示效果）
 
   # Use the installed application that comes with the system to download `freetype2-wps` or `yay -S freetype2-wps` to solve the problem of bold garbled characters
 
+  # wps latest version
   yay -S wps-office-cn
   yay -S wps-office-mui-zh-cn
   ```
