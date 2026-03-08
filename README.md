@@ -547,6 +547,14 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
   yay -S scribus --noconfirm
   sudo pacman -S poppler --noconfirm
   # comand : pdfunite pdf1.pdf pdf2.pdf newname.pdf
+  # gui download
+  #  git clone https://github.com/Shadowsith/qpdfunify
+  # cd qpdfunify
+  # git submodule update --init --recursive
+  # qmake qpdfunify.pro
+  # make clean
+  # make -j$(nproc)
+  # ./qpdfunify
   ```
 
 - #### .exe-open
