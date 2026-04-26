@@ -813,6 +813,12 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
 <!--   yay -S easystroke --noconfirm -->
 <!--   ``` -->
 
+  - #### Manjaro configuration svn
+    ```bash
+    sudo pacman -S networkmanager-l2tp strongswan xl2tpd
+    sudo systemctl restart NetworkManager
+    # 打开“设置” → “网络” → 点击“VPN”旁边的“+” → “Layer 2 Tunneling Protocol (L2TP)
+    ```
 ---
 
 > **Author:** NichloasChiu  
