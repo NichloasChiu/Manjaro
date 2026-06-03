@@ -292,6 +292,13 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
   chmod +x ~/.config/joshuto/preview_file.sh
   ```
 
+- #### Install nutstore-experimental
+
+  ```bash
+  yay -S nutstore-experimental --noconfirm
+  # jianguoyun
+  ```
+
 - #### Configure zsh/tmux/alacritty/p10k themes/joshuto/ulauncher/
 
   ```bash
