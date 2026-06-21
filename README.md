@@ -27,6 +27,18 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
   sudo pacman -S dpkg
   # use dpkg to install the deb package
   sudo dpkg -i ~/下载/PigchaClient.deb
+
+  # uninstall installed deb package
+  # The .deb file name is not necessarily equal to the package name. Check the real package name first:
+  dpkg -l | grep -i turbo
+  # Then uninsatll the package with the following command:
+  sudo dpkg -r <package-name>
+  # Check the installation path of the deb package
+  ls /opt | grep -i turbo
+  ls /usr/local | grep -i turbo
+  ls ~/.config | grep -i turbo
+  # Remove the installation path of the deb package
+  rm -rf /opt/<package-name>
   ```
 
 - #### Replace domestic sources
@@ -266,7 +278,19 @@ If ventoy starts manjaro, please use the option `Grub2 Mode` to start the new ve
   # Install plugins
   cd ~/.local/share/nvim/lazy/markdown-preview.nvim
   npm install
+
+  # Check the Copilot plugin installation status
+  :echo exists(':Copilot')
+  # if the result is 1, it means that the plugin is installed successfully
+
+  # Check the Copilot plugin authorization status or new version the copilot plugin authorization {:Copilot setup}
+  :Copilot auth
   ```
+
+  1. Copy the one-time verification code: Copy the prompted verification code 4B4E-E303 to the clipboard.  
+  2. Visit the verification page: Open https://github.com/login/device in your browser.  
+  3. Enter the verification code: Paste the verification code in the GitHub login page and complete authentication.  
+  4. Wait for completion: After completing the authentication, the Copilot plug-in in Neovim will automatically close the pop-up window and start working normally.  
 
 - #### Install alacritty
 
